@@ -756,7 +756,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
       propertyPath: m_Name
-      value: VFX_RedCheck
+      value: VFX_OrangeCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.043137245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.40531412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.99215686
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
