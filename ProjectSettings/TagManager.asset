@@ -4,8 +4,27 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Botas_Caucho
-  - Botas
+  - Botas_Protectoras
+  - Tenis
+  - Tapones
+  - "Aud\xEDfonos"
+  - Rodilleras
+  - Gafas_Protectoras
+  - Arnes
+  - Guantes_Cuero
+  - Guantes_Nitrilo
+  - Guantes_Algodon
+  - Guantes_Neopreno
+  - Guantes_PVC
+  - Guantes_Kevlar
+  - Camisa
+  - Camiseta
+  - Jean
+  - Sudadera
+  - Casco
+  - Tapabocas_Covid
+  - Tapabocas_Particulas
+  - Tapabocas_Filtros
   layers:
   - Default
   - TransparentFX
