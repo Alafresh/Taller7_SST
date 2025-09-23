@@ -815,18 +815,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_OrangeCheck
       objectReference: {fileID: 0}
-    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.043137245
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.4763433
-      objectReference: {fileID: 0}
-    - target: {fileID: 5296616498136636165, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.99215686
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

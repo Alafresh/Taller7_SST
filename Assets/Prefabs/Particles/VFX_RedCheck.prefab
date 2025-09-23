@@ -4846,7 +4846,7 @@ GameObject:
   - component: {fileID: 5296616498136636165}
   - component: {fileID: 3814622475386387549}
   m_Layer: 0
-  m_Name: P_VFX_YellowCheck
+  m_Name: P_VFX_OrangeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5057,7 +5057,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9924528, g: 0.18924673, b: 0.043068595, a: 1}
+      maxColor: {r: 0.99215686, g: 0.4763433, b: 0.043137245, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5814,7 +5814,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 50
+        scalar: 5
         minScalar: 30
         maxCurve:
           serializedVersion: 2
