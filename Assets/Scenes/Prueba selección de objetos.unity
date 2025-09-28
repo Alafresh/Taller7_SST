@@ -804,12 +804,12 @@ GameObject:
   - component: {fileID: 190152938}
   - component: {fileID: 190152937}
   - component: {fileID: 190152936}
-  - component: {fileID: 190152942}
   - component: {fileID: 190152941}
   - component: {fileID: 190152940}
   - component: {fileID: 190152944}
   - component: {fileID: 190152943}
   - component: {fileID: 190152945}
+  - component: {fileID: 190152946}
   m_Layer: 14
   m_Name: Cube (1)
   m_TagString: "Aud\xEDfonos"
@@ -950,40 +950,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 190152945}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
---- !u!114 &190152942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190152935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointable: {fileID: 190152941}
-  _whenRelease:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenHover:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenUnhover:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenSelect:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenUnselect:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenMove:
-    m_PersistentCalls:
-      m_Calls: []
-  _whenCancel:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &190152943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1034,52 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &190152946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190152935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointable: {fileID: 190152941}
+  _whenRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1218688749}
+        m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
+        m_MethodName: SeleccionarObjeto
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenMove:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenCancel:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &298168713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,11 +2390,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a05c87d68020f24781e326ce34694f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkParticles: {fileID: 0}
-  blueParticles: {fileID: 0}
-  yellowParticles: {fileID: 0}
-  greenParticles: {fileID: 0}
-  orangeParticles: {fileID: 0}
+  pinkParticles: {fileID: 4631776604292136137, guid: 754567b7ea4484842bd5687ede76e181, type: 3}
+  blueParticles: {fileID: 7973652816696162781, guid: d550eac02fcbd334f9f129f752b5c961, type: 3}
+  yellowParticles: {fileID: 891770596486151928, guid: 01c38117ca8f9c94c898cb1b9475fe41, type: 3}
+  greenParticles: {fileID: 1020252646737289620, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
+  orangeParticles: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
+  objetosSeleccionados: []
+  numeroDeObjetosSeleccionados: 0
+  objetoSeleccionado: 0
 --- !u!4 &1218688750
 Transform:
   m_ObjectHideFlags: 0
