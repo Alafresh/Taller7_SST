@@ -1066,6 +1066,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 190152935}
+        m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2075,7 +2087,19 @@ MonoBehaviour:
       m_Calls: []
   _whenSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1218688749}
+        m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
+        m_MethodName: SeleccionarObjeto
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenUnselect:
     m_PersistentCalls:
       m_Calls: []
@@ -2395,7 +2419,6 @@ MonoBehaviour:
   yellowParticles: {fileID: 891770596486151928, guid: 01c38117ca8f9c94c898cb1b9475fe41, type: 3}
   greenParticles: {fileID: 1020252646737289620, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
   orangeParticles: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
-  objetosSeleccionados: []
   numeroDeObjetosSeleccionados: 0
   objetoSeleccionado: 0
 --- !u!4 &1218688750
