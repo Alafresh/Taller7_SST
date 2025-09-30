@@ -8,6 +8,10 @@ public class ObjectsManager : MonoBehaviour
     //La idea es que aparezca en el inspector un menú desplegable con las diferentes categorías de EPP, se seleccione cuáles van a estar en la situación
     //Después se debe elegir por cada categoría cuál de sus opciones son de mejor o peor calidad dependiendo de la tarea
 
+    public List<Categoria> categoriasEnEscena;
+
+    #region Pooling
+
     [SerializeField] private int defaultPoolSize;
     [SerializeField] private int maxPoolSize;
     [SerializeField] private ObjectToPoolPrefab objectToPool;
@@ -16,8 +20,6 @@ public class ObjectsManager : MonoBehaviour
     // pool.Release Returns the instance back to the pool.
     // https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.IObjectPool_1.html
     [SerializeField] private IObjectPool<ObjectToPoolPrefab> pool;
-
-    public List<Categoria> categoriasEnEscena;
 
     private void Awake() {
         pool = new ObjectPool<ObjectToPoolPrefab>(CreateObject, 
@@ -40,4 +42,5 @@ public class ObjectsManager : MonoBehaviour
     private void DestroyPooledObject(ObjectToPoolPrefab objectInstace) {
         Destroy(objectInstace.gameObject);
     }
+    #endregion
 }
