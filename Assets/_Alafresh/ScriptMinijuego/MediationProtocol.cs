@@ -7,27 +7,19 @@ using UnityEngine.Events;
 namespace MinijuegosObreros {
     public class MediationProtocol : MonoBehaviour
     {
-        
+        [SerializeField] private CheckDragAndDrop contadorcheck;
         [SerializeField] private UnityEvent OnFirstAttempt;
-
-        
         [SerializeField] private UnityEvent OnSecondAttempt;
-
-
         [SerializeField] private UnityEvent OnThirdAttempt;
-
         [SerializeField] private UnityEvent OnFourthAttempt;
-
-
         [SerializeField] private UnityEvent BucleEvent;
 
         private void OnEnable() {
             MediationLogic();
-
             gameObject.SetActive(false);
         }
         private void MediationLogic() {
-            switch (CheckDragAndDrop.checkCounter) {
+            switch (contadorcheck.checkCounter) {
                 case 1:
                     OnFirstAttempt.Invoke();
                     break;

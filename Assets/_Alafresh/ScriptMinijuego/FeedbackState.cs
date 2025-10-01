@@ -38,9 +38,6 @@ namespace MinijuegosObreros {
         };
 
         private TMP_Text textTarget;
-
-        [Space(35)]
-        public UnityEvent OnEndAnimation;
         public States State { get => state; set => state = value; }
 
         private void OnEnable() {

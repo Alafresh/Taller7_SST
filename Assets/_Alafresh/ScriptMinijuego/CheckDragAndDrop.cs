@@ -10,7 +10,7 @@ namespace MinijuegosObreros {
         [SerializeField] private UnityEvent OnCorrect;
         [SerializeField] private UnityEvent OnIncorrect;
 
-        public static int checkCounter = 0;
+        public int checkCounter = 0;
         public void Check() {
             checkCounter++;
             int i = 0;
