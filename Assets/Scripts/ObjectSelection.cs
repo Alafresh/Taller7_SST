@@ -7,6 +7,15 @@ using UnityEngine;
 //Este código funciona de la siguiente manera: Hay un array de categorias que se irá llenando cuando el usuario selecciona (coge con el distance grab o con las manos)
 // un EPP. Las categorias están creadas como una clase pública con su tipo y el objeto seleccionado (de tipo ObjectSelection.Objeto).
 // El enum tiene los nombre de todos los objetos que hay en la experiencia (estos nombres tambié son los tags que llevarán los game objects).
+
+//Este enum contiene todos los objetos que se pueden seleccionar en la escena
+public enum Objeto
+{
+    Botas_Protectoras, Tenis, Tapones, Audífonos, Rodilleras, Gafas_Protectoras, Arnes,
+    Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
+    Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros
+}
+
 public class ObjectSelection : MonoBehaviour
 {
     [SerializeField] private GameObject pinkParticles;    [SerializeField] private GameObject blueParticles;   [SerializeField] private GameObject yellowParticles; [SerializeField] private GameObject greenParticles; [SerializeField] private GameObject orangeParticles;  // partículas de colores
@@ -15,13 +24,7 @@ public class ObjectSelection : MonoBehaviour
     public int numeroDeObjetosSeleccionados = 0;
     public Objeto objetoSeleccionado;
 
-    //Este enum contiene todos los objetos que se pueden seleccionar en la escena
-    public enum Objeto
-    {
-        Botas_Protectoras, Tenis, Tapones, Audífonos, Rodilleras, Gafas_Protectoras, Arnes, 
-        Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
-        Camisa, Camiseta, Jean, Sudadera, Casco, Tapabocas_Covid, Tapabocas_Particulas,Tapabocas_Filtros
-    }
+    
     //Esta función es la que se encarga de la lógica después de que se selecciona un objeto
     public void SeleccionarObjeto(int objeto)
     {       
@@ -334,12 +337,12 @@ public class ObjectSelection : MonoBehaviour
 //Esta clase es para representar una categoría de objeto y el objeto seleccionado dentro de esa categoría
 public class Categoria
 {
-    public Tipo tipo; 
-    public ObjectSelection.Objeto objetoSeleccionado;
-
     public enum Tipo //Son 10 tipos posibles y són los que están en el GDD (Tapabocas, Cabeza, Pantalon, Camiseta/camisa, Guantes, Arnes, Gafas, Rodilleras, Oidos, Zapatos)
     {
         Tapabocas, Oidos, Gafas, Cabeza, Camisa, Guantes, Pantalon, Rodilleras, Zapatos, Arnes
     }
+
+    public Tipo tipo; 
+    public Objeto objetoSeleccionado;
 }
 

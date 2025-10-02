@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using Meta.XR.Editor.Tags;
+using System;
+using Unity.VisualScripting;
 
 public class ObjectsManager : MonoBehaviour
 {
@@ -8,7 +11,12 @@ public class ObjectsManager : MonoBehaviour
     //La idea es que aparezca en el inspector un menú desplegable con las diferentes categorías de EPP, se seleccione cuáles van a estar en la situación
     //Después se debe elegir por cada categoría cuál de sus opciones son de mejor o peor calidad dependiendo de la tarea
 
-    public List<Categoria> categoriasEnEscena;
+    [SerializeField] public List<Categoria> categoriasEnEscena;
+    [SerializeField] public List<GameObject> eppSeleccionados;
+    [SerializeField] public List<bool> eppCorrectos;
+
+
+    
 
     #region Pooling
 
@@ -43,4 +51,10 @@ public class ObjectsManager : MonoBehaviour
         Destroy(objectInstace.gameObject);
     }
     #endregion
+
+    void SpawnObject(Vector3 position, Quaternion rotation) {
+        ObjectToPoolPrefab objectInstance = pool.Get();
+        objectInstance.transform.position = position;
+        objectInstance.transform.rotation = rotation;
+    }
 }
