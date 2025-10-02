@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class CheckFindIt : MonoBehaviour
+public class CheckFindIt : MiniGamesManager
 {
     [SerializeField] private GameObject[] cards;
 
@@ -23,6 +24,7 @@ public class CheckFindIt : MonoBehaviour
 
     public void Check()
     {
+        SumContadorCheck();
         switch (_state)
         {
             case State.One:
@@ -50,10 +52,14 @@ public class CheckFindIt : MonoBehaviour
             OnCorrect.Invoke();
             return;
         }
-        cards[(int)_state].gameObject.SetActive(false);
+        cards[(int)_state].SetActive(false);
         _state++;
-        cards[(int)_state].gameObject.SetActive(true);
+        cards[(int)_state].SetActive(true);
         _count = 0;
     }
-    public void SumCount() => _count++;
+    public void SumCount(Button button)
+    {
+        button.enabled = false;
+        _count++;
+    }
 }

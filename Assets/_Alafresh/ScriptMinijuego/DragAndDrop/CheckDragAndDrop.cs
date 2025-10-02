@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace MinijuegosObreros {
-    public class CheckDragAndDrop : MonoBehaviour {
+    public class CheckDragAndDrop : MiniGamesManager
+    {
         
         [SerializeField] private DropSlot[] drops;
         [SerializeField] private UnityEvent OnCorrect;
         [SerializeField] private UnityEvent OnIncorrect;
 
-        public int checkCounter = 0;
         public void Check() {
-            checkCounter++;
+            SumContadorCheck();
             int i = 0;
             if (drops.Length != 0 && drops != null) {
                 foreach (var item in drops) {
