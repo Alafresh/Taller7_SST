@@ -25,6 +25,9 @@ TagManager:
   - Tapabocas_Covid
   - Tapabocas_Particulas
   - Tapabocas_Filtros
+  - ItemDraggerParent
+  - Slot
+  - Gorra
   layers:
   - Default
   - TransparentFX
