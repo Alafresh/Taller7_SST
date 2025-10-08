@@ -49,6 +49,7 @@ public class CheckFindIt : MiniGamesManager
 
         if (_state == State.Three)
         {
+            timer.StopTimer();
             OnCorrect.Invoke();
             return;
         }
@@ -59,7 +60,7 @@ public class CheckFindIt : MiniGamesManager
     }
     public void SumCount(Button button)
     {
-        button.enabled = false;
+        button.interactable = false;
         _count++;
     }
 }
