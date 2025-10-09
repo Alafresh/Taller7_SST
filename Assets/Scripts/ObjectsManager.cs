@@ -54,6 +54,6 @@ public class ObjectsManager : MonoBehaviour
     public void SpawnObject(Transform position) {
         ObjectToPoolPrefab objectInstance = pool.Get();
         objectInstance.transform.position = position.position;
-        objectInstance.transform.rotation = position.rotation;
+        
     }
 }
