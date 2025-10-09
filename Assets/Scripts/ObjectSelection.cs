@@ -10,7 +10,7 @@ using UnityEngine;
 //Este enum contiene todos los objetos que se pueden seleccionar en la escena
 public enum Objeto
 {
-    Botas_Protectoras, Tenis, Tapones, Aud�fonos, Rodilleras, Gafas_Protectoras, Arnes,
+    Botas_Protectoras, Tenis, Tapones, Audifonos, Rodilleras, Gafas_Protectoras, Arnes,
     Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
     Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros
 }
@@ -72,10 +72,10 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Oidos en el array");
                 } 
                 break;
-            case Objeto.Aud�fonos:
+            case Objeto.Audifonos:
                 Categoria audifonos = new Categoria();
                 audifonos.tipo = Categoria.Tipo.Oidos;
-                audifonos.objetoSeleccionado = Objeto.Aud�fonos;
+                audifonos.objetoSeleccionado = Objeto.Audifonos;
                 if (objetosSeleccionados[1] == null || objetosSeleccionados[1].tipo != Categoria.Tipo.Oidos)
                 {
                     objetosSeleccionados[1] = audifonos;
