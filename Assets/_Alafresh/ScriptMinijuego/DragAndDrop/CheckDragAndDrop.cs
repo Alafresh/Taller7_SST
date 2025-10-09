@@ -24,8 +24,10 @@ namespace MinijuegosObreros {
                 }
             }
 
-            if (i == drops.Length)
+            if (i == drops.Length) {
+                timer.StopTimer();
                 OnCorrect.Invoke();
+            }
             else
                 OnIncorrect.Invoke();
         }

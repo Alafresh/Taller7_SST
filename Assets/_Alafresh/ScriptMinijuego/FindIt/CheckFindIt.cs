@@ -47,7 +47,7 @@ public class CheckFindIt : MiniGamesManager
             return;
         }
 
-        if (_state == State.Three)
+        if (_state == State.One)
         {
             timer.StopTimer();
             OnCorrect.Invoke();
