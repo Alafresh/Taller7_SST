@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-//using Meta.XR.Editor.Tags;
 using System;
 using Unity.VisualScripting;
 
 public class ObjectsManager : MonoBehaviour
 {
-    //Este código va a permitir el fácil establecimiento de EPP en la escena y la calidad que le responde dependiendo de la situación
-    //La idea es que aparezca en el inspector un menú desplegable con las diferentes categorías de EPP, se seleccione cuáles van a estar en la situación
-    //Después se debe elegir por cada categoría cuál de sus opciones son de mejor o peor calidad dependiendo de la tarea
+    //Este cï¿½digo va a permitir el fï¿½cil establecimiento de EPP en la escena y la calidad que le responde dependiendo de la situaciï¿½n
+    //La idea es que aparezca en el inspector un menï¿½ desplegable con las diferentes categorï¿½as de EPP, se seleccione cuï¿½les van a estar en la situaciï¿½n
+    //Despuï¿½s se debe elegir por cada categorï¿½a cuï¿½l de sus opciones son de mejor o peor calidad dependiendo de la tarea
 
     [SerializeField] public List<Categoria> categoriasEnEscena;
     [SerializeField] public List<GameObject> eppSeleccionados;
@@ -27,7 +26,7 @@ public class ObjectsManager : MonoBehaviour
     // pool.Get Get an instance from the pool. If the pool is empty then a new instance will be created.
     // pool.Release Returns the instance back to the pool.
     // https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.IObjectPool_1.html
-    [SerializeField] private IObjectPool<ObjectToPoolPrefab> pool;
+    private IObjectPool<ObjectToPoolPrefab> pool;
 
     private void Awake() {
         pool = new ObjectPool<ObjectToPoolPrefab>(CreateObject, 
@@ -52,9 +51,9 @@ public class ObjectsManager : MonoBehaviour
     }
     #endregion
 
-    void SpawnObject(Vector3 position, Quaternion rotation) {
+    public void SpawnObject(Transform position) {
         ObjectToPoolPrefab objectInstance = pool.Get();
-        objectInstance.transform.position = position;
-        objectInstance.transform.rotation = rotation;
+        objectInstance.transform.position = position.position;
+        objectInstance.transform.rotation = position.rotation;
     }
 }

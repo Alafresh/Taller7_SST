@@ -1,31 +1,30 @@
-//using Meta.XR.Editor.Tags;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 
-//Este código funciona de la siguiente manera: Hay un array de categorias que se irá llenando cuando el usuario selecciona (coge con el distance grab o con las manos)
-// un EPP. Las categorias están creadas como una clase pública con su tipo y el objeto seleccionado (de tipo ObjectSelection.Objeto).
-// El enum tiene los nombre de todos los objetos que hay en la experiencia (estos nombres tambié son los tags que llevarán los game objects).
+//Este cï¿½digo funciona de la siguiente manera: Hay un array de categorias que se irï¿½ llenando cuando el usuario selecciona (coge con el distance grab o con las manos)
+// un EPP. Las categorias estï¿½n creadas como una clase pï¿½blica con su tipo y el objeto seleccionado (de tipo ObjectSelection.Objeto).
+// El enum tiene los nombre de todos los objetos que hay en la experiencia (estos nombres tambiï¿½ son los tags que llevarï¿½n los game objects).
 
 //Este enum contiene todos los objetos que se pueden seleccionar en la escena
 public enum Objeto
 {
-    Botas_Protectoras, Tenis, Tapones, Audífonos, Rodilleras, Gafas_Protectoras, Arnes,
+    Botas_Protectoras, Tenis, Tapones, Audï¿½fonos, Rodilleras, Gafas_Protectoras, Arnes,
     Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
     Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros
 }
 
 public class ObjectSelection : MonoBehaviour
 {
-    [SerializeField] private GameObject pinkParticles;    [SerializeField] private GameObject blueParticles;   [SerializeField] private GameObject yellowParticles; [SerializeField] private GameObject greenParticles; [SerializeField] private GameObject orangeParticles;  // partículas de colores
+    [SerializeField] private GameObject pinkParticles;    [SerializeField] private GameObject blueParticles;   [SerializeField] private GameObject yellowParticles; [SerializeField] private GameObject greenParticles; [SerializeField] private GameObject orangeParticles;  // partï¿½culas de colores
 
     public Categoria[] objetosSeleccionados = new Categoria[10];
     public int numeroDeObjetosSeleccionados = 0;
     public Objeto objetoSeleccionado;
 
     
-    //Esta función es la que se encarga de la lógica después de que se selecciona un objeto
+    //Esta funciï¿½n es la que se encarga de la lï¿½gica despuï¿½s de que se selecciona un objeto
     public void SeleccionarObjeto(int objeto)
     {       
         Debug.Log("Objeto seleccionado: " + (Objeto)objeto);
@@ -73,10 +72,10 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Oidos en el array");
                 } 
                 break;
-            case Objeto.Audífonos:
+            case Objeto.Audï¿½fonos:
                 Categoria audifonos = new Categoria();
                 audifonos.tipo = Categoria.Tipo.Oidos;
-                audifonos.objetoSeleccionado = Objeto.Audífonos;
+                audifonos.objetoSeleccionado = Objeto.Audï¿½fonos;
                 if (objetosSeleccionados[1] == null || objetosSeleccionados[1].tipo != Categoria.Tipo.Oidos)
                 {
                     objetosSeleccionados[1] = audifonos;
@@ -250,7 +249,7 @@ public class ObjectSelection : MonoBehaviour
                 {
                     objetosSeleccionados[6] = jean;
                     numeroDeObjetosSeleccionados++;
-                    Debug.Log("el elemento en la posición 6 es de tipo " + objetosSeleccionados[6].tipo + " y es un " + objetosSeleccionados[6].objetoSeleccionado);
+                    Debug.Log("el elemento en la posiciï¿½n 6 es de tipo " + objetosSeleccionados[6].tipo + " y es un " + objetosSeleccionados[6].objetoSeleccionado);
                 }
                 else
                 {
@@ -328,16 +327,16 @@ public class ObjectSelection : MonoBehaviour
                 }
                 break;
             default:
-                Debug.Log("Ningún objeto agregado");
+                Debug.Log("Ningï¿½n objeto agregado");
                 break;
         }
     }
 }
 
-//Esta clase es para representar una categoría de objeto y el objeto seleccionado dentro de esa categoría
+//Esta clase es para representar una categorï¿½a de objeto y el objeto seleccionado dentro de esa categorï¿½a
 public class Categoria
 {
-    public enum Tipo //Son 10 tipos posibles y són los que están en el GDD (Tapabocas, Cabeza, Pantalon, Camiseta/camisa, Guantes, Arnes, Gafas, Rodilleras, Oidos, Zapatos)
+    public enum Tipo //Son 10 tipos posibles y sï¿½n los que estï¿½n en el GDD (Tapabocas, Cabeza, Pantalon, Camiseta/camisa, Guantes, Arnes, Gafas, Rodilleras, Oidos, Zapatos)
     {
         Tapabocas, Oidos, Gafas, Cabeza, Camisa, Guantes, Pantalon, Rodilleras, Zapatos, Arnes
     }
