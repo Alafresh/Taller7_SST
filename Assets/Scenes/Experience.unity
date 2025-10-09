@@ -3212,7 +3212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a01b45904f26ca146ad7d6520e6adc30, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6404,35 +6404,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5558524
+      value: -2.047
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.89
+      value: 23.491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -6440,7 +6440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 907249064bb534445a67a24ab45b7de1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6532,7 +6532,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 533926290}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 533926285}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -6571,7 +6571,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 533926285}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -6593,7 +6593,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 533926285}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -6616,7 +6616,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 533926290}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 533926285}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -6674,7 +6674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 533926290}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -6691,6 +6691,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 533926284}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6721,10 +6733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 533926289}
+  - {fileID: 533926288}
+  - {fileID: 533926287}
+  - {fileID: 533926286}
   _data: {fileID: 0}
 --- !u!1001 &543531715
 PrefabInstance:
@@ -6986,7 +6998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 95d44e7460f8139439530601669d5810, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7470,15 +7482,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 16986dd69642f7141902472ae050dd93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.018
+      value: -1.596
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16986dd69642f7141902472ae050dd93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.927
+      value: 2.024
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16986dd69642f7141902472ae050dd93, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.522
+      value: 23.851
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16986dd69642f7141902472ae050dd93, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7594,7 +7606,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 611113923}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 611113918}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -7632,8 +7644,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 611113923}
+  _rigidbody: {fileID: 611113918}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -7654,8 +7666,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 611113923}
+  _rigidbody: {fileID: 611113918}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -7678,7 +7690,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 611113923}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 611113918}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -7736,7 +7748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 611113923}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -7753,6 +7765,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 611113917}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7783,10 +7807,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 611113922}
+  - {fileID: 611113921}
+  - {fileID: 611113920}
+  - {fileID: 611113919}
   _data: {fileID: 0}
 --- !u!1001 &614680671
 PrefabInstance:
@@ -7908,7 +7932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 95d44e7460f8139439530601669d5810, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10305,15 +10329,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415352735350063628, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.14909
+      value: -1.297
       objectReference: {fileID: 0}
     - target: {fileID: 6415352735350063628, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 6415352735350063628, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.29173
+      value: 23.491
       objectReference: {fileID: 0}
     - target: {fileID: 6415352735350063628, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11263,15 +11287,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cd7fe7d9c11afab4288e0cd2509a3aab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.066
+      value: -1.901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7fe7d9c11afab4288e0cd2509a3aab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.101
+      value: 2.064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7fe7d9c11afab4288e0cd2509a3aab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.5677
+      value: 23.821
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd7fe7d9c11afab4288e0cd2509a3aab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11387,7 +11411,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 877643967}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 877643962}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -11425,8 +11449,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 877643967}
+  _rigidbody: {fileID: 877643962}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -11447,8 +11471,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 877643967}
+  _rigidbody: {fileID: 877643962}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -11471,7 +11495,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 877643967}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 877643962}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -11529,7 +11553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 877643967}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -11546,6 +11570,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 877643961}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11576,10 +11612,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 877643966}
+  - {fileID: 877643965}
+  - {fileID: 877643964}
+  - {fileID: 877643963}
   _data: {fileID: 0}
 --- !u!1001 &881088975
 PrefabInstance:
@@ -11657,35 +11693,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6019406
+      value: -1.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.41
+      value: 1.977
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.35643
+      value: 23.871
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -89.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -11693,7 +11729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 45fb70feb126d2e478b543a05575e44f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -11781,7 +11817,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 882274479}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 882274474}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -11819,8 +11855,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 882274479}
+  _rigidbody: {fileID: 882274474}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -11841,8 +11877,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 882274479}
+  _rigidbody: {fileID: 882274474}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -11865,7 +11901,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 882274479}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 882274474}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -11923,7 +11959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 882274479}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -11940,6 +11976,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 882274473}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11970,10 +12018,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 882274478}
+  - {fileID: 882274477}
+  - {fileID: 882274476}
+  - {fileID: 882274475}
   _data: {fileID: 0}
 --- !u!1001 &883466608
 PrefabInstance:
@@ -15017,35 +15065,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.190544
+      value: -0.922
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.44
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.84
+      value: 23.881
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -89.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -15053,7 +15101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 87c8ebfb53ed20842b740808ba01c386, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -15141,7 +15189,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1149038061}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1149038056}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -15179,8 +15227,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1149038061}
+  _rigidbody: {fileID: 1149038056}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -15201,8 +15249,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1149038061}
+  _rigidbody: {fileID: 1149038056}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -15225,7 +15273,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1149038061}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1149038056}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -15283,7 +15331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1149038061}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -15300,6 +15348,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1149038055}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15330,10 +15390,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1149038060}
+  - {fileID: 1149038059}
+  - {fileID: 1149038058}
+  - {fileID: 1149038057}
   _data: {fileID: 0}
 --- !u!1001 &1149500298
 PrefabInstance:
@@ -16198,7 +16258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3832300505477cd46bc346d04fa1cb21, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19810,7 +19870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 95d44e7460f8139439530601669d5810, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19910,15 +19970,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2e48c43445606954594c35983aa62f3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.136
+      value: -1.297
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e48c43445606954594c35983aa62f3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.246
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e48c43445606954594c35983aa62f3a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.458
+      value: 23.491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e48c43445606954594c35983aa62f3a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20034,7 +20094,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1513402577}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1513402572}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -20072,8 +20132,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1513402577}
+  _rigidbody: {fileID: 1513402572}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -20094,8 +20154,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1513402577}
+  _rigidbody: {fileID: 1513402572}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -20118,7 +20178,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1513402577}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1513402572}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -20176,7 +20236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1513402577}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -20193,6 +20253,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1513402571}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20223,10 +20295,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1513402576}
+  - {fileID: 1513402575}
+  - {fileID: 1513402574}
+  - {fileID: 1513402573}
   _data: {fileID: 0}
 --- !u!1001 &1522500589
 PrefabInstance:
@@ -20849,35 +20921,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.139
+      value: -1.624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.26
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.4478
+      value: 23.491
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -20885,7 +20957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d97326723b598b14893452e316c7ab78, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -20973,7 +21045,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1562413309}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1562413304}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -21011,8 +21083,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1562413309}
+  _rigidbody: {fileID: 1562413304}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -21033,8 +21105,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1562413309}
+  _rigidbody: {fileID: 1562413304}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -21057,7 +21129,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1562413309}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1562413304}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -21115,7 +21187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1562413309}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -21132,6 +21204,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1562413303}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21162,10 +21246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1562413308}
+  - {fileID: 1562413307}
+  - {fileID: 1562413306}
+  - {fileID: 1562413305}
   _data: {fileID: 0}
 --- !u!1001 &1568691782
 PrefabInstance:
@@ -26679,7 +26763,7 @@ Transform:
   m_GameObject: {fileID: 1939900287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.085, y: 1.09, z: 28.585}
+  m_LocalPosition: {x: -2.059, y: 2.18, z: 26.939}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28166,15 +28250,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9c75cb840ca232142afc36166ce2120f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.021
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c75cb840ca232142afc36166ce2120f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.689
+      value: 2.095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c75cb840ca232142afc36166ce2120f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.406
+      value: 23.439
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c75cb840ca232142afc36166ce2120f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28332,7 +28416,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 2038719934}
   _rigidbody: {fileID: 2038719929}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
@@ -28354,7 +28438,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 2038719934}
   _rigidbody: {fileID: 2038719929}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
@@ -28453,6 +28537,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ObjectSelection, Assembly-CSharp
         m_MethodName: SeleccionarObjeto
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2038719928}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -29577,7 +29673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4750b67ac5f28f4b8fc901052b84363, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29818,15 +29914,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8c01393af62088543bf15996e6ecb227, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.132
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c01393af62088543bf15996e6ecb227, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.095
+      value: 2.059
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c01393af62088543bf15996e6ecb227, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.535
+      value: 23.479
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c01393af62088543bf15996e6ecb227, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29980,7 +30076,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 2128378956}
   _rigidbody: {fileID: 2128378951}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
@@ -30002,7 +30098,7 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
+  _pointableElement: {fileID: 2128378956}
   _rigidbody: {fileID: 2128378951}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
@@ -30105,6 +30201,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2128378950}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
