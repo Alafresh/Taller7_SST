@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2541641991509620178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8254456924458509706}
+  - component: {fileID: 3645841178733844888}
+  - component: {fileID: 5960606444491627667}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8254456924458509706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541641991509620178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.73773, y: 0, z: 2.75117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3645841178733844888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541641991509620178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a05c87d68020f24781e326ce34694f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pinkParticles: {fileID: 4631776604292136137, guid: 754567b7ea4484842bd5687ede76e181, type: 3}
+  blueParticles: {fileID: 7973652816696162781, guid: d550eac02fcbd334f9f129f752b5c961, type: 3}
+  yellowParticles: {fileID: 891770596486151928, guid: 01c38117ca8f9c94c898cb1b9475fe41, type: 3}
+  greenParticles: {fileID: 1020252646737289620, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
+  orangeParticles: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
+  numeroDeObjetosSeleccionados: 0
+  objetoSeleccionado: 0
+--- !u!114 &5960606444491627667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541641991509620178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac78e0227da6af4fb0d29272a9370c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eppSeleccionados: []
+  eppCorrectos: 
+  defaultPoolSize: 0
+  maxPoolSize: 1
+  objectToPool: {fileID: 0}

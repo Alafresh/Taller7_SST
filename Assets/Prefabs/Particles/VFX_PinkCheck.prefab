@@ -246,7 +246,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.46
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -364,7 +364,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -828,7 +828,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.14
       mode: 0
       spread: 0
       speed:
@@ -4920,6 +4920,7 @@ GameObject:
   - component: {fileID: 31541422286887390}
   - component: {fileID: 6674519731676052860}
   - component: {fileID: 3775418536422610012}
+  - component: {fileID: 5835403824077818874}
   m_Layer: 0
   m_Name: VFX_PinkCheck
   m_TagString: Untagged
@@ -9743,3 +9744,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5835403824077818874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631776604292136137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978f670d495949048a5bfe1a9284a644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
