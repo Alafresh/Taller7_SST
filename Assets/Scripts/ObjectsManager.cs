@@ -34,20 +34,20 @@ public class ObjectsManager : MonoBehaviour
             GetFromPool, ReleaseToPool, DestroyPooledObject, true, defaultPoolSize, maxPoolSize);
     }
 
-    private ObjectToPoolPrefab CreateObject() {
+    public ObjectToPoolPrefab CreateObject() {
         ObjectToPoolPrefab objectToInstance = Instantiate(objectToPool);
         objectToInstance.Pool = pool;
         return objectToInstance;
     }
 
-    private void GetFromPool(ObjectToPoolPrefab objectInstance) {
+    public void GetFromPool(ObjectToPoolPrefab objectInstance) {
         objectInstance.gameObject.SetActive(true);
     }
 
-    private void ReleaseToPool(ObjectToPoolPrefab objectInstance) {
+    public void ReleaseToPool(ObjectToPoolPrefab objectInstance) {
         objectInstance.gameObject.SetActive(false);
     }
-    private void DestroyPooledObject(ObjectToPoolPrefab objectInstace) {
+    public void DestroyPooledObject(ObjectToPoolPrefab objectInstace) {
         Destroy(objectInstace.gameObject);
     }
     #endregion
