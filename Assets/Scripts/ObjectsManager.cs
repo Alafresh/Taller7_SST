@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using Meta.XR.Editor.Tags;
 using System;
 using Unity.VisualScripting;
 
@@ -27,7 +26,7 @@ public class ObjectsManager : MonoBehaviour
     // pool.Get Get an instance from the pool. If the pool is empty then a new instance will be created.
     // pool.Release Returns the instance back to the pool.
     // https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.IObjectPool_1.html
-    [SerializeField] private IObjectPool<ObjectToPoolPrefab> pool;
+    private IObjectPool<ObjectToPoolPrefab> pool;
 
     private void Awake() {
         pool = new ObjectPool<ObjectToPoolPrefab>(CreateObject, 
@@ -52,9 +51,9 @@ public class ObjectsManager : MonoBehaviour
     }
     #endregion
 
-    void SpawnObject(Vector3 position, Quaternion rotation) {
+    public void SpawnObject(Transform position) {
         ObjectToPoolPrefab objectInstance = pool.Get();
-        objectInstance.transform.position = position;
-        objectInstance.transform.rotation = rotation;
+        objectInstance.transform.position = position.position;
+        objectInstance.transform.rotation = position.rotation;
     }
 }
