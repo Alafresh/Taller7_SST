@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8254456924458509706}
   - component: {fileID: 3645841178733844888}
   - component: {fileID: 5960606444491627667}
+  - component: {fileID: 3846679228634650337}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -64,8 +65,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac78e0227da6af4fb0d29272a9370c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eppSeleccionados: []
-  eppCorrectos: 
-  defaultPoolSize: 0
-  maxPoolSize: 1
-  objectToPool: {fileID: 0}
+  defaultPoolSize: 2
+  maxPoolSize: 6
+  objectToPool: {fileID: 8035832122615883779, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
+--- !u!114 &3846679228634650337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541641991509620178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6610f453359030d41b9e42ce1031d8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Botas_Protectoras: 0
+  Tenis: 0
+  Tapones: 0
+  Audifonos: 0
+  Rodilleras: 0
+  Gafas_Protectoras: 0
+  Arnes: 0
+  Guantes_Cuero: 0
+  Guantes_Nitrilo: 0
+  Guantes_Algodon: 0
+  Guantes_Neopreno: 0
+  Guantes_PVC: 0
+  Guantes_Kevlar: 0
+  Camisa: 0
+  Camiseta: 0
+  Jean: 0
+  Sudadera: 0
+  Casco: 0
+  Gorra: 0
+  Tapabocas_Covid: 0
+  Tapabocas_Particulas: 0
+  Tapabocas_Filtros: 0
