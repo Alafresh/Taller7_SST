@@ -6,7 +6,7 @@ using UnityEngine;
 public class TareaManager : MonoBehaviour
 {
     //Estos bool sirven para poder decidir desde el inspector, qué elementos sirven(true) o no(false) en la tarea de la escena
-    [Header("EPP")] public static bool Botas_Protectoras, Tenis, Tapones, Audifonos, Rodilleras, Gafas_Protectoras, Arnes, Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar, Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros;
+    [Header("EPP")] public bool Botas_Protectoras, Tenis, Tapones, Audifonos, Rodilleras, Gafas_Protectoras, Arnes, Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar, Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros;
 
     public ObjectSelection objectSelection;
 
@@ -17,37 +17,39 @@ public class TareaManager : MonoBehaviour
     private int index = 0;
 
     public EppsEnEscena[] objetosCorrectos;
+    public EppsEnEscena[] objetosGenerales;
 
-
-    
-
-    #region ConstruccionEPPs
-    public static EppsEnEscena botas_Protectoras = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Botas_Protectoras, value = Botas_Protectoras }, tenis = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tenis, value = Tenis }, tapones = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapones, value = Tapones }, audifonos = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Audifonos, value = Audifonos }, rodilleras = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Rodilleras, value = Rodilleras }, gafasProtectoras = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Gafas_Protectoras, value = Gafas_Protectoras },
-    arnes = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Arnes, value = Arnes }, guantesCuero = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Cuero, value = Guantes_Cuero }, guantesNitrilo = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Nitrilo, value = Guantes_Nitrilo }, guantesAlgodon = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Algodon, value = Guantes_Algodon }, guantesNeopreno = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Neopreno, value = Guantes_Neopreno }, guantesPVC = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_PVC, value = Guantes_PVC },
-    guantesKevlar = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Kevlar, value = Guantes_Kevlar }, camisa = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Camisa, value = Camisa }, camiseta = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Camiseta, value = Camiseta }, jean = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Jean, value = Jean }, sudadera = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Sudadera, value = Sudadera }, casco = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Casco, value = Casco }, gorra = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Gorra, value = Gorra },
-    tapabocasCovid = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Covid, value = Tapabocas_Covid }, tapabocasParticulas = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Particulas, value = Tapabocas_Particulas }, tapabocasFiltros = new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Filtros, value = Tapabocas_Filtros };
-    #endregion
-    
-    public EppsEnEscena[] objetosGenerales = new EppsEnEscena[22] { botas_Protectoras, tenis, tapones, audifonos, rodilleras, gafasProtectoras, arnes, guantesCuero, guantesNitrilo, guantesAlgodon, guantesNeopreno, guantesPVC, guantesKevlar, camisa, camiseta, jean, sudadera, casco, gorra, tapabocasCovid, tapabocasParticulas, tapabocasFiltros };
-
-    public void Start()
+    private void Awake()
     {
-        foreach (var obj in objetosGenerales) 
+        objetosGenerales = new EppsEnEscena[]
         {
-            if(obj.value == true) 
-            {
-                countCorrectos++;
-            }
-        }
-        objetosCorrectos = new EppsEnEscena[countCorrectos];
-        foreach (var obj in objetosGenerales)
-        {
-            if (obj.value == true)
-            {
-                objetosCorrectos[index] = obj;
-                index++;
-            }
-        }
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Botas_Protectoras, value = Botas_Protectoras },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tenis, value = Tenis },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapones, value = Tapones },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Audifonos, value = Audifonos },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Rodilleras, value = Rodilleras },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Gafas_Protectoras, value = Gafas_Protectoras },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Arnes, value = Arnes },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Cuero, value = Guantes_Cuero },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Nitrilo, value = Guantes_Nitrilo },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Algodon, value = Guantes_Algodon },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Neopreno, value = Guantes_Neopreno },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_PVC, value = Guantes_PVC },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Guantes_Kevlar, value = Guantes_Kevlar },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Camisa, value = Camisa },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Camiseta, value = Camiseta },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Jean, value = Jean },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Sudadera, value = Sudadera },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Casco, value = Casco },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Gorra, value = Gorra },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Covid, value = Tapabocas_Covid },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Particulas, value = Tapabocas_Particulas },
+            new EppsEnEscena { elemento = EppsEnEscena.Objeto.Tapabocas_Filtros, value = Tapabocas_Filtros }
+        };
+    }
+    private void Start()
+    {
+        objetosCorrectos = objetosGenerales.Where(obj => obj.value).ToArray();
     }
 
     //el llamado a esta función debe ir primero a la de ObjectSelection
@@ -113,16 +115,16 @@ public class TareaManager : MonoBehaviour
             Debug.Log("Entro al Foreach de correctos");
             Debug.Log("Tag: " + tagObjeto + "elementoObj" + elementoObj);
             //si este if no funciona, probablemente sea porque el puesto del inventario que se está verificando fue ocupado antes de que la lógica llegara a este punto
-            if (tagObjeto == elementoObj && ObjectSelection.objetosSeleccionados[index] == null)
+            if (tagObjeto == elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
                 Debug.Log("el tag concuerda con un elemento correcto y la posición del arreglo está vacío");
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
             }
-            else if (tagObjeto != elementoObj && ObjectSelection.objetosSeleccionados[index] == null)
+            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
                 elementosRecorridos++;
-                if(elementosRecorridos == ObjectSelection.objetosSeleccionados.Length) 
+                if(elementosRecorridos == objectSelection.objetosSeleccionados.Length) 
                 {
                     Debug.Log("Se recorrió todo el arreglo de elementos correctos y no coincidio el objeto");
                     objeto.SetActive(false);
@@ -131,6 +133,4 @@ public class TareaManager : MonoBehaviour
             }
         }
     }
-
-
 }

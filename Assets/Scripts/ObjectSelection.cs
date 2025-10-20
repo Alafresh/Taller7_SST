@@ -26,7 +26,7 @@ public class EppsEnEscena
 public class ObjectSelection : MonoBehaviour
 {
     //este array está en static para que pudiera aparecer en el TareaManager, pero no tengo claro que  consecuencias pueden haber por hacerlo static
-    public static Categoria[] objetosSeleccionados = new Categoria[10];
+    public  Categoria[] objetosSeleccionados = new Categoria[10];
     public int numeroDeObjetosSeleccionados = 0;
     public EppsEnEscena.Objeto objetoSeleccionado;
 

@@ -46,11 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a05c87d68020f24781e326ce34694f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkParticles: {fileID: 4631776604292136137, guid: 754567b7ea4484842bd5687ede76e181, type: 3}
-  blueParticles: {fileID: 7973652816696162781, guid: d550eac02fcbd334f9f129f752b5c961, type: 3}
-  yellowParticles: {fileID: 891770596486151928, guid: 01c38117ca8f9c94c898cb1b9475fe41, type: 3}
-  greenParticles: {fileID: 1020252646737289620, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
-  orangeParticles: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
   numeroDeObjetosSeleccionados: 0
   objetoSeleccionado: 0
 --- !u!114 &5960606444491627667
@@ -102,3 +97,6 @@ MonoBehaviour:
   Tapabocas_Covid: 0
   Tapabocas_Particulas: 0
   Tapabocas_Filtros: 0
+  objectSelection: {fileID: 3645841178733844888}
+  objectsManagerRojas: {fileID: 0}
+  ObjectsManagerVerdes: {fileID: 5960606444491627667}

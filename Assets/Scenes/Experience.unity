@@ -3107,21 +3107,41 @@ PrefabInstance:
       value: Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
-      propertyPath: Tapabocas_Covid
-      value: 0
+      propertyPath: Jean
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
-      propertyPath: objectSelection
-      value: 
-      objectReference: {fileID: 222058729}
+      propertyPath: Casco
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Camisa
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Rodilleras
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Guantes_Algodon
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Botas_Protectoras
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Gafas_Protectoras
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Tapabocas_Filtros
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
       propertyPath: objectsManagerRojas
       value: 
       objectReference: {fileID: 530152721}
-    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
-      propertyPath: ObjectsManagerVerdes
-      value: 
-      objectReference: {fileID: 987224217}
     - target: {fileID: 8254456924458509706, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.73
@@ -14373,17 +14393,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03ad95f931e3a3345a3e85b250366b2c, type: 3}
   m_PrefabInstance: {fileID: 978404304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &987224217 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5960606444491627667, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
-  m_PrefabInstance: {fileID: 222058728}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac78e0227da6af4fb0d29272a9370c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1002907712
 PrefabInstance:
   m_ObjectHideFlags: 0
