@@ -13,9 +13,6 @@ public class TareaManager : MonoBehaviour
     public ObjectsManager objectsManagerRojas;
     public ObjectsManager ObjectsManagerVerdes;
 
-    private int countCorrectos = 0;
-    private int index = 0;
-
     public EppsEnEscena[] objetosCorrectos;
     public EppsEnEscena[] objetosGenerales;
 

@@ -10054,7 +10054,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f25b2ef14dba484d8cd7efd98ec8243, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1350711906}
   m_SourcePrefab: {fileID: 100100000, guid: 3f25b2ef14dba484d8cd7efd98ec8243, type: 3}
 --- !u!4 &695250102 stripped
 Transform:
@@ -10654,15 +10657,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 45f1585c4917ee34aba45f55b2ee1b9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.26
+      value: -11.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45f1585c4917ee34aba45f55b2ee1b9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91400003
+      value: 1.262
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45f1585c4917ee34aba45f55b2ee1b9d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.94156
+      value: 29.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 45f1585c4917ee34aba45f55b2ee1b9d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19566,6 +19569,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0749fdde82ebe3140b250a3242aa5255, type: 3}
   m_PrefabInstance: {fileID: 1348235741}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1350711903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f25b2ef14dba484d8cd7efd98ec8243, type: 3}
+  m_PrefabInstance: {fileID: 695250101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1350711906
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350711903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f158c94f37c6a4c46821ff24570640d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1356256867
 PrefabInstance:
   m_ObjectHideFlags: 0
