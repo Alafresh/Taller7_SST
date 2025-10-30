@@ -105,10 +105,10 @@ public class TareaManager : MonoBehaviour
                 Debug.Log("layer no coincide con los establecidos para los EPP");
                 break;
         }
-        foreach (var obj in objetosCorrectos) 
+        foreach (EppsEnEscena obj in objetosCorrectos) 
         {
             string tagObjeto = objeto.tag.ToString();
-            string elementoObj = obj.elemento.DisplayName().ToString();
+            string elementoObj = obj.elemento.ToString(); //aquí hay una referencia nula al DisplayName
             Debug.Log("Entro al Foreach de correctos");
             Debug.Log("Tag: " + tagObjeto + "elementoObj" + elementoObj);
             //si este if no funciona, probablemente sea porque el puesto del inventario que se está verificando fue ocupado antes de que la lógica llegara a este punto
@@ -118,7 +118,7 @@ public class TareaManager : MonoBehaviour
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
             }
-            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null)
+            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null) //aquí hay un error en la lógica
             {
                 elementosRecorridos++;
                 if(elementosRecorridos == objectSelection.objetosSeleccionados.Length) 
