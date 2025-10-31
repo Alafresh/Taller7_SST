@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Experience.unity
-    guid: d7ec189a69a535c4086465b82611c490
+    path: Assets/_Alafresh/ObrerosUsoDeProteccion/MinijuegoDragAndDrop.unity
+    guid: 8578678a84794144bb72a4e79f3a678c
+  - enabled: 1
+    path: Assets/_Alafresh/ObrerosUsoDeProteccion/MinijuegoFindIt.unity
+    guid: 3833bc67f15af554db78f08325a1cbde
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3b6b0d15121f90340887df7e6d77f6a7, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
