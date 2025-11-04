@@ -32,22 +32,25 @@ public class PhaseTeleport : MonoBehaviour
     public void ActivateVolume() 
     {
         if (volume == null || vignette == null) return;
-        FadeOut();
+        Debug.Log("ActivateVolume()");
+        StartCoroutine(FadeOut());
     }
     private void DeactivateVolume()
     {
         if (volume == null || vignette == null) return;
-        FadeIn();
+        StartCoroutine(FadeIn());
     }
 
     private IEnumerator FadeOut() 
     {
+        Debug.Log("FadeOut()");
         float elapsedTime = 0f;
         while (elapsedTime < endTime) 
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / endTime;
             vignette.intensity.value = Mathf.Lerp(initialIntensity, 1f, t);
+            //WaitForSeconds wait = new WaitForSeconds(0.01f);  Si se ve mal, descomentar esto
             colorAdjustments.colorFilter.value = Color.Lerp(Color.white, Color.black, t);
             yield return null;
         }
@@ -70,8 +73,19 @@ public class PhaseTeleport : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / endTime;
             vignette.intensity.value = Mathf.Lerp(1f, initialIntensity, t);
+            //WaitForSeconds wait = new WaitForSeconds(0.01f);  Si se ve mal, descomentar esto
             colorAdjustments.colorFilter.value = Color.Lerp(Color.black, Color.white, t);
             yield return null;
+        }
+    }
+
+    public void Update()
+    {
+        // For testing purposes, press the T key to activate the teleport effect
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("Teleport activated");
+            ActivateVolume();
         }
     }
 }
