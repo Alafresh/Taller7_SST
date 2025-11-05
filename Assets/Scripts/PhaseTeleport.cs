@@ -89,7 +89,7 @@ public class PhaseTeleport : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / tp_effect_endTime;
-            vignette.intensity.value = Mathf.Lerp(tp_effect_initialIntensity, 0.999f, t);
+            vignette.intensity.value = Mathf.Lerp(tp_effect_initialIntensity, 1, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.white, Color.black, t);
             yield return null;
         }
@@ -111,7 +111,7 @@ public class PhaseTeleport : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / tp_effect_endTime;
-            vignette.intensity.value = Mathf.Lerp(0.999f, tp_effect_initialIntensity, t);
+            vignette.intensity.value = Mathf.Lerp(1f, tp_effect_initialIntensity, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.black, Color.white, t);
             yield return null;
         }

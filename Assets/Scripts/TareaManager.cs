@@ -16,6 +16,8 @@ public class TareaManager : MonoBehaviour
     public EppsEnEscena[] objetosCorrectos;
     public EppsEnEscena[] objetosGenerales;
 
+    private int cantidadElementosCorrectos;
+
     private void Awake()
     {
         objetosGenerales = new EppsEnEscena[]
@@ -47,12 +49,18 @@ public class TareaManager : MonoBehaviour
     private void Start()
     {
         objetosCorrectos = objetosGenerales.Where(obj => obj.value).ToArray();
+        foreach (EppsEnEscena obj in objetosCorrectos) 
+        {
+            if (obj != null) 
+            {
+                cantidadElementosCorrectos++;
+            }
+        }
     }
 
     //el llamado a esta función debe ir primero a la de ObjectSelection
     public void ApagarYPrenderParticulas(GameObject objeto)
     {
-        Debug.Log("Se llamo ApagarYPrenderParticulas");
         int index = 0;
         int layerObj = objeto.layer;
         int elementosRecorridos = 0;
@@ -108,26 +116,23 @@ public class TareaManager : MonoBehaviour
         foreach (EppsEnEscena obj in objetosCorrectos) 
         {
             string tagObjeto = objeto.tag.ToString();
-            string elementoObj = obj.elemento.ToString(); //aquí hay una referencia nula al DisplayName
-            Debug.Log("Entro al Foreach de correctos");
-            Debug.Log("Tag: " + tagObjeto + "elementoObj" + elementoObj);
-            //si este if no funciona, probablemente sea porque el puesto del inventario que se está verificando fue ocupado antes de que la lógica llegara a este punto
+            string elementoObj = obj.elemento.ToString();
+            
             if (tagObjeto == elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
-                Debug.Log("el tag concuerda con un elemento correcto y la posición del arreglo está vacío");
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
             }
-            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null) //aquí hay un error en la lógica
+            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null) 
             {
-                Debug.Log("[TM] pasó al else if");
                 elementosRecorridos++;
-                if(elementosRecorridos == objectSelection.objetosSeleccionados.Length) 
+                
+                if (elementosRecorridos == cantidadElementosCorrectos) 
                 {
-                    Debug.Log("Se recorrió todo el arreglo de elementos correctos y no coincidio el objeto");
                     objeto.SetActive(false);
                     objectsManagerRojas.SpawnObject(objeto.transform);
                 }
+                
             }
         }
     }

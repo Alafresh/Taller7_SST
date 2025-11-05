@@ -24,14 +24,12 @@ public class EppsEnEscena
 
 
 public class ObjectSelection : MonoBehaviour
-{
-    //este array está en static para que pudiera aparecer en el TareaManager, pero no tengo claro que  consecuencias pueden haber por hacerlo static
+{  
     public  Categoria[] objetosSeleccionados = new Categoria[10];
     public int numeroDeObjetosSeleccionados = 0;
     public EppsEnEscena.Objeto objetoSeleccionado;
 
     
-    //Esta funci�n es la que se encarga de la l�gica despu�s de que se selecciona un objeto
     public void SeleccionarObjeto(int objeto)
     {       
         Debug.Log("Objeto seleccionado: " + (EppsEnEscena.Objeto)objeto);
@@ -358,10 +356,10 @@ public class ObjectSelection : MonoBehaviour
                 break;
         }
     }
-    public void ApagarObjeto(GameObject objeto) 
-    {
-        objeto.SetActive(false);
-    }
+    //public void ApagarObjeto(GameObject objeto) 
+    //{
+    //    objeto.SetActive(false);
+    //}
 }
 
 //Esta clase es para representar una categor�a de objeto y el objeto seleccionado dentro de esa categor�a
