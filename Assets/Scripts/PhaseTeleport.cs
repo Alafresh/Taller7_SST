@@ -26,6 +26,7 @@ public class PhaseTeleport : MonoBehaviour
     public Animator animatorAirCompressor;
 
     private bool hasTeleportedOneTime = false;
+    private bool firstAccidentOccur = false;
 
     [SerializeField] private TareaManager tareaManager;
     void Start()
@@ -90,9 +91,9 @@ public class PhaseTeleport : MonoBehaviour
     }
     IEnumerator Accidents()
     {
-        WaitForSeconds TiempoObreroHablando = new WaitForSeconds(3f);
-        if (!hasTeleportedOneTime)
+        if (!firstAccidentOccur)
         {
+            WaitForSeconds TiempoObreroHablando = new WaitForSeconds(10f);
             animatorBrick.SetTrigger("Fall");
             yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
 
@@ -100,19 +101,22 @@ public class PhaseTeleport : MonoBehaviour
                 animatorBrick.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
                 !animatorBrick.IsInTransition(0)
             );
-            animatorBrick.transform.parent.gameObject.SetActive(false);
+            animatorBrick.transform.gameObject.SetActive(false);
+            firstAccidentOccur = true;
             //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
         }
-        else if (hasTeleportedOneTime)
+        else if (firstAccidentOccur)
         {
+            
+            WaitForSeconds TiempoObreroHablando = new WaitForSeconds(5f);
             animatorAirCompressor.SetTrigger("Fall");
-            yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
+            yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
 
             yield return new WaitUntil(() =>
-                animatorBrick.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
-                !animatorBrick.IsInTransition(0)
+                animatorAirCompressor.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
+                !animatorAirCompressor.IsInTransition(0)
             );
-            animatorAirCompressor.transform.parent.gameObject.SetActive(false);
+            animatorAirCompressor.transform.gameObject.SetActive(false);
             //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
         }
     }
