@@ -12,10 +12,24 @@ public class PhaseTeleport : MonoBehaviour
     private Vignette vignette;
     private ColorAdjustments colorAdjustments;
 
-    public GameObject hurtVolume;
+    private float tp_effect_initialIntensity;
+    public float tp_effect_endTime = 1f;
 
-    private float initialIntensity;
-    public float endTime = 1;
+
+    public GameObject hurtVolume;
+    private Volume  h_volume;
+    private Vignette hv_vignette;
+
+    private float hv_effect_initialIntensity;
+    public float hv_effect_endTime = 5f;
+
+
+    public GameObject savedVolume;
+    private Volume s_volume;
+    private Vignette s_vignette;
+
+    private float s_effect_initialIntensity;
+    public float s_effect_endTime = 5f;
 
 
     public GameObject waypoint1;
@@ -28,6 +42,8 @@ public class PhaseTeleport : MonoBehaviour
     private bool hasTeleportedOneTime = false;
     private bool firstAccidentOccur = false;
 
+    public ObjectSelection objectSelection;
+
     [SerializeField] private TareaManager tareaManager;
     void Start()
     {
@@ -36,7 +52,21 @@ public class PhaseTeleport : MonoBehaviour
         volume.profile.TryGet<ColorAdjustments>(out colorAdjustments);
         if (vignette != null) 
         {
-            initialIntensity = vignette.intensity.value;
+            tp_effect_initialIntensity = vignette.intensity.value;
+        }
+
+        h_volume = hurtVolume.GetComponent<Volume>();
+        h_volume.profile.TryGet<Vignette>(out hv_vignette);
+        if (hv_vignette != null)
+        {
+            hv_effect_initialIntensity = hv_vignette.intensity.value;
+        }
+
+        s_volume = savedVolume.GetComponent<Volume>();
+        s_volume.profile.TryGet<Vignette>(out s_vignette);
+        if (s_vignette != null)
+        {
+            s_effect_initialIntensity = s_vignette.intensity.value;
         }
     }
     public void ActivateVolume() 
@@ -55,19 +85,18 @@ public class PhaseTeleport : MonoBehaviour
     {
         Debug.Log("FadeOut()");
         float elapsedTime = 0f;
-        while (elapsedTime < endTime) 
+        while (elapsedTime < tp_effect_endTime) 
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / endTime;
-            vignette.intensity.value = Mathf.Lerp(initialIntensity, 1f, t);
-            //WaitForSeconds wait = new WaitForSeconds(0.01f);  Si se ve mal, descomentar esto
+            float t = elapsedTime / tp_effect_endTime;
+            vignette.intensity.value = Mathf.Lerp(tp_effect_initialIntensity, 0.999f, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.white, Color.black, t);
             yield return null;
         }
         if (!hasTeleportedOneTime)
         {
             player.transform.position = waypoint1.transform.position;
-            hasTeleportedOneTime = true; //aquí está el problema
+            hasTeleportedOneTime = true;
         }
         else 
         {
@@ -78,12 +107,11 @@ public class PhaseTeleport : MonoBehaviour
     private IEnumerator FadeIn()
     {
         float elapsedTime = 0f;
-        while (elapsedTime < endTime)
+        while (elapsedTime < tp_effect_endTime)
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / endTime;
-            vignette.intensity.value = Mathf.Lerp(1f, initialIntensity, t);
-            //WaitForSeconds wait = new WaitForSeconds(0.01f);  Si se ve mal, descomentar esto
+            float t = elapsedTime / tp_effect_endTime;
+            vignette.intensity.value = Mathf.Lerp(0.999f, tp_effect_initialIntensity, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.black, Color.white, t);
             yield return null;
         }
@@ -91,9 +119,13 @@ public class PhaseTeleport : MonoBehaviour
     }
     IEnumerator Accidents()
     {
+        float elapsedTime = 0f;
         if (!firstAccidentOccur)
         {
-            WaitForSeconds TiempoObreroHablando = new WaitForSeconds(10f);
+            while (elapsedTime < 5f) { 
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
             animatorBrick.SetTrigger("Fall");
             yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
 
@@ -103,20 +135,71 @@ public class PhaseTeleport : MonoBehaviour
             );
             animatorBrick.transform.gameObject.SetActive(false);
             firstAccidentOccur = true;
-            //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
+            if (objectSelection.objetosSeleccionados[8] == null || objectSelection.objetosSeleccionados[8].objetoSeleccionado != EppsEnEscena.Objeto.Botas_Protectoras)
+            {
+                float hv_activeTime = 0f;
+                hurtVolume.SetActive(true);
+                while (hv_activeTime < hv_effect_endTime)
+                {
+                    hv_activeTime += Time.deltaTime;
+                    float t = hv_activeTime / hv_effect_endTime;
+                    hv_vignette.intensity.value = Mathf.Lerp(hv_effect_initialIntensity, 0f, t);
+                    yield return null;
+                }
+                hurtVolume.SetActive(false);
+                hv_vignette.intensity.value = hv_effect_initialIntensity;
+            }
+            else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras) 
+            {
+                float sv_activeTime = 0f;
+                savedVolume.SetActive(true);
+                while (sv_activeTime < s_effect_endTime)
+                {
+                    sv_activeTime += Time.deltaTime;
+                    float t = sv_activeTime / s_effect_endTime;
+                    s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
+                    yield return null;
+                }
+                savedVolume.SetActive(false);
+                s_vignette.intensity.value = s_effect_initialIntensity;
+            }
         }
         else if (firstAccidentOccur)
         {
-            
+            while (elapsedTime < 5f)
+            {
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
             WaitForSeconds TiempoObreroHablando = new WaitForSeconds(5f);
             animatorAirCompressor.SetTrigger("Fall");
-            yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
+            yield return new WaitUntil(() => animatorAirCompressor.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
 
             yield return new WaitUntil(() =>
                 animatorAirCompressor.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
-                !animatorAirCompressor.IsInTransition(0)
+                !animatorAirCompressor.IsInTransition(0)   
             );
+            
             animatorAirCompressor.transform.gameObject.SetActive(false);
+            if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco) 
+            {
+                hurtVolume.SetActive(true);
+            }
+            else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
+            {
+                float sv_activeTime = 0f;
+                savedVolume.SetActive(true);
+                while (sv_activeTime < s_effect_endTime)
+                {
+                    sv_activeTime += Time.deltaTime;
+                    float t = sv_activeTime / s_effect_endTime;
+                    s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
+                    yield return null;
+                }
+                savedVolume.SetActive(false);
+                s_vignette.intensity.value = s_effect_initialIntensity;
+            }
+
             //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
         }
     }
@@ -126,7 +209,6 @@ public class PhaseTeleport : MonoBehaviour
         // For testing purposes, press the T key to activate the teleport effect
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("Teleport activated");
             ActivateVolume();
         }
     }
