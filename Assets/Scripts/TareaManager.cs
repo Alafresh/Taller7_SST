@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -117,22 +119,34 @@ public class TareaManager : MonoBehaviour
         {
             string tagObjeto = objeto.tag.ToString();
             string elementoObj = obj.elemento.ToString();
-            
+
             if (tagObjeto == elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
             }
-            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null) 
+            else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
                 elementosRecorridos++;
-                
-                if (elementosRecorridos == cantidadElementosCorrectos) 
+                if (elementosRecorridos == cantidadElementosCorrectos)
                 {
                     objeto.SetActive(false);
                     objectsManagerRojas.SpawnObject(objeto.transform);
                 }
-                
+
+            }
+            else if (objectSelection.objetosSeleccionados[index] != null)
+            {
+                DistanceGrabInteractable interactable = objeto.GetComponent<DistanceGrabInteractable>();
+                HandGrabInteractable handInteractable = objeto.GetComponent<HandGrabInteractable>();
+                GrabInteractable grabInteractable = objeto.GetComponent<GrabInteractable>();
+                DistanceHandGrabInteractable distanceHandGrab = objeto.GetComponent<DistanceHandGrabInteractable>();
+                interactable.enabled = false;
+                handInteractable.enabled = false;
+                grabInteractable.enabled = false;
+                distanceHandGrab.enabled = false;
+
+                //aquí tengo que poner el audio diciendole que ya cogió algo de ese tipo
             }
         }
     }
