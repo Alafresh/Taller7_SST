@@ -120,6 +120,7 @@ public class TareaManager : MonoBehaviour
             }
             else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null) //aquí hay un error en la lógica
             {
+                Debug.Log("[TM] pasó al else if");
                 elementosRecorridos++;
                 if(elementosRecorridos == objectSelection.objetosSeleccionados.Length) 
                 {
