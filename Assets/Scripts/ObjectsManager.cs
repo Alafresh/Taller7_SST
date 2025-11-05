@@ -6,16 +6,6 @@ using Unity.VisualScripting;
 
 public class ObjectsManager : MonoBehaviour
 {
-    //Este código va a permitir el fácil establecimiento de EPP en la escena y la calidad que le responde dependiendo de la situación
-    //La idea es que aparezca en el inspector un menú desplegable con las diferentes categorías de EPP, se seleccione cuáles van a estar en la situación
-    //Después se debe elegir por cada categoría cuál de sus opciones son de mejor o peor calidad dependiendo de la tarea
-
-    [SerializeField] public List<Categoria> categoriasEnEscena;
-    [SerializeField] public List<GameObject> eppSeleccionados;
-    [SerializeField] public List<bool> eppCorrectos;
-
-
-    
 
     #region Pooling
 
@@ -49,11 +39,11 @@ public class ObjectsManager : MonoBehaviour
     public void DestroyPooledObject(ObjectToPoolPrefab objectInstace) {
         Destroy(objectInstace.gameObject);
     }
-    #endregion
-
     public void SpawnObject(Transform position) {
         ObjectToPoolPrefab objectInstance = pool.Get();
         objectInstance.transform.position = position.position;
-        objectInstance.transform.rotation = position.rotation;
+        
     }
+    #endregion
+
 }

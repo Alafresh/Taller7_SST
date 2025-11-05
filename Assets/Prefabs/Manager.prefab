@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8254456924458509706}
   - component: {fileID: 3645841178733844888}
   - component: {fileID: 5960606444491627667}
+  - component: {fileID: 3846679228634650337}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -45,11 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a05c87d68020f24781e326ce34694f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinkParticles: {fileID: 4631776604292136137, guid: 754567b7ea4484842bd5687ede76e181, type: 3}
-  blueParticles: {fileID: 7973652816696162781, guid: d550eac02fcbd334f9f129f752b5c961, type: 3}
-  yellowParticles: {fileID: 891770596486151928, guid: 01c38117ca8f9c94c898cb1b9475fe41, type: 3}
-  greenParticles: {fileID: 1020252646737289620, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
-  orangeParticles: {fileID: 2869722479969099331, guid: b2274983578e64b4e97b90b5d936da6b, type: 3}
   numeroDeObjetosSeleccionados: 0
   objetoSeleccionado: 0
 --- !u!114 &5960606444491627667
@@ -64,8 +60,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac78e0227da6af4fb0d29272a9370c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eppSeleccionados: []
-  eppCorrectos: 
-  defaultPoolSize: 0
-  maxPoolSize: 1
-  objectToPool: {fileID: 0}
+  defaultPoolSize: 2
+  maxPoolSize: 6
+  objectToPool: {fileID: 8035832122615883779, guid: 5b1995ff80c67604ca15fdc06e0f9fd2, type: 3}
+--- !u!114 &3846679228634650337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541641991509620178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6610f453359030d41b9e42ce1031d8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Botas_Protectoras: 0
+  Tenis: 0
+  Tapones: 0
+  Audifonos: 0
+  Rodilleras: 0
+  Gafas_Protectoras: 0
+  Arnes: 0
+  Guantes_Cuero: 0
+  Guantes_Nitrilo: 0
+  Guantes_Algodon: 0
+  Guantes_Neopreno: 0
+  Guantes_PVC: 0
+  Guantes_Kevlar: 0
+  Camisa: 0
+  Camiseta: 0
+  Jean: 0
+  Sudadera: 0
+  Casco: 0
+  Gorra: 0
+  Tapabocas_Covid: 0
+  Tapabocas_Particulas: 0
+  Tapabocas_Filtros: 0
+  objectSelection: {fileID: 3645841178733844888}
+  objectsManagerRojas: {fileID: 0}
+  ObjectsManagerVerdes: {fileID: 5960606444491627667}
