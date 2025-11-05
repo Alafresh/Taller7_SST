@@ -66,7 +66,7 @@ public class PhaseTeleport : MonoBehaviour
         if (!hasTeleportedOneTime)
         {
             player.transform.position = waypoint1.transform.position;
-            hasTeleportedOneTime = true;
+            hasTeleportedOneTime = true; //aquí está el problema
         }
         else 
         {
@@ -103,7 +103,7 @@ public class PhaseTeleport : MonoBehaviour
             animatorBrick.transform.parent.gameObject.SetActive(false);
             //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
         }
-        else
+        else if (hasTeleportedOneTime)
         {
             animatorAirCompressor.SetTrigger("Fall");
             yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
