@@ -206,13 +206,4 @@ public class PhaseTeleport : MonoBehaviour
             }
         }
     }
-
-    public void Update()
-    {
-        // For testing purposes, press the T key to activate the teleport effect
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ActivateVolume();
-        }
-    }
 }
