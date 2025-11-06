@@ -73,15 +73,15 @@ public class PhaseTeleport : MonoBehaviour
     {
         if (volume == null || vignette == null) return;
         Debug.Log("ActivateVolume()");
-        StartCoroutine(FadeOut());
+        FadeOut();
     }
     private void DeactivateVolume()
     {
         if (volume == null || vignette == null) return;
-        StartCoroutine(FadeIn());
+        FadeIn();
     }
 
-    private IEnumerator FadeOut() 
+    private void FadeOut() 
     {
         Debug.Log("FadeOut()");
         float elapsedTime = 0f;
@@ -91,7 +91,7 @@ public class PhaseTeleport : MonoBehaviour
             float t = elapsedTime / tp_effect_endTime;
             vignette.intensity.value = Mathf.Lerp(tp_effect_initialIntensity, 1, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.white, Color.black, t);
-            yield return null;
+            //yield return null;
         }
         if (!hasTeleportedOneTime)
         {
@@ -104,7 +104,7 @@ public class PhaseTeleport : MonoBehaviour
         }
         DeactivateVolume();
     }
-    private IEnumerator FadeIn()
+    private void FadeIn()
     {
         float elapsedTime = 0f;
         while (elapsedTime < tp_effect_endTime)
@@ -113,7 +113,7 @@ public class PhaseTeleport : MonoBehaviour
             float t = elapsedTime / tp_effect_endTime;
             vignette.intensity.value = Mathf.Lerp(1f, tp_effect_initialIntensity, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.black, Color.white, t);
-            yield return null;
+            //yield return null;
         }
         StartCoroutine(Accidents());
     }
