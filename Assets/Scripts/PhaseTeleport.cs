@@ -120,87 +120,90 @@ public class PhaseTeleport : MonoBehaviour
     IEnumerator Accidents()
     {
         float elapsedTime = 0f;
-        if (!firstAccidentOccur)
+        while (true) 
         {
-            while (elapsedTime < 5f) { 
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-            animatorBrick.SetTrigger("Fall");
-            yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
-
-            yield return new WaitUntil(() =>
-                animatorBrick.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
-                !animatorBrick.IsInTransition(0)
-            );
-            animatorBrick.transform.gameObject.SetActive(false);
-            firstAccidentOccur = true;
-            if (objectSelection.objetosSeleccionados[8] == null || objectSelection.objetosSeleccionados[8].objetoSeleccionado != EppsEnEscena.Objeto.Botas_Protectoras)
+            if (!firstAccidentOccur)
             {
-                float hv_activeTime = 0f;
-                hurtVolume.SetActive(true);
-                while (hv_activeTime < hv_effect_endTime)
+                while (elapsedTime < 5f)
                 {
-                    hv_activeTime += Time.deltaTime;
-                    float t = hv_activeTime / hv_effect_endTime;
-                    hv_vignette.intensity.value = Mathf.Lerp(hv_effect_initialIntensity, 0f, t);
+                    elapsedTime += Time.deltaTime;
                     yield return null;
                 }
-                hurtVolume.SetActive(false);
-                hv_vignette.intensity.value = hv_effect_initialIntensity;
-            }
-            else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras) 
-            {
-                float sv_activeTime = 0f;
-                savedVolume.SetActive(true);
-                while (sv_activeTime < s_effect_endTime)
+                animatorBrick.SetTrigger("Fall");
+                yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
+
+                yield return new WaitUntil(() =>
+                    animatorBrick.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
+                    !animatorBrick.IsInTransition(0)
+                );
+                animatorBrick.transform.gameObject.SetActive(false);
+                firstAccidentOccur = true;
+                if (objectSelection.objetosSeleccionados[8] == null || objectSelection.objetosSeleccionados[8].objetoSeleccionado != EppsEnEscena.Objeto.Botas_Protectoras)
                 {
-                    sv_activeTime += Time.deltaTime;
-                    float t = sv_activeTime / s_effect_endTime;
-                    s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
+                    float hv_activeTime = 0f;
+                    hurtVolume.SetActive(true);
+                    while (hv_activeTime < hv_effect_endTime)
+                    {
+                        hv_activeTime += Time.deltaTime;
+                        float t = hv_activeTime / hv_effect_endTime;
+                        hv_vignette.intensity.value = Mathf.Lerp(hv_effect_initialIntensity, 0f, t);
+                        yield return null;
+                    }
+                    hurtVolume.SetActive(false);
+                    hv_vignette.intensity.value = hv_effect_initialIntensity;
+                }
+                else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
+                {
+                    float sv_activeTime = 0f;
+                    savedVolume.SetActive(true);
+                    while (sv_activeTime < s_effect_endTime)
+                    {
+                        sv_activeTime += Time.deltaTime;
+                        float t = sv_activeTime / s_effect_endTime;
+                        s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
+                        yield return null;
+                    }
+                    savedVolume.SetActive(false);
+                    s_vignette.intensity.value = s_effect_initialIntensity;
+                }
+                ActivateVolume();
+            }
+            else if (firstAccidentOccur)
+            {
+                while (elapsedTime < 5f)
+                {
+                    elapsedTime += Time.deltaTime;
                     yield return null;
                 }
-                savedVolume.SetActive(false);
-                s_vignette.intensity.value = s_effect_initialIntensity;
-            }
-        }
-        else if (firstAccidentOccur)
-        {
-            while (elapsedTime < 5f)
-            {
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-            WaitForSeconds TiempoObreroHablando = new WaitForSeconds(5f);
-            animatorAirCompressor.SetTrigger("Fall");
-            yield return new WaitUntil(() => animatorAirCompressor.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
+                animatorAirCompressor.SetTrigger("Fall");
+                yield return new WaitUntil(() => animatorAirCompressor.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
 
-            yield return new WaitUntil(() =>
-                animatorAirCompressor.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
-                !animatorAirCompressor.IsInTransition(0)   
-            );
-            
-            animatorAirCompressor.transform.gameObject.SetActive(false);
-            if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco) 
-            {
-                hurtVolume.SetActive(true);
-            }
-            else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
-            {
-                float sv_activeTime = 0f;
-                savedVolume.SetActive(true);
-                while (sv_activeTime < s_effect_endTime)
+                yield return new WaitUntil(() =>
+                    animatorAirCompressor.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
+                    !animatorAirCompressor.IsInTransition(0)
+                );
+
+                animatorAirCompressor.transform.gameObject.SetActive(false);
+                if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco)
                 {
-                    sv_activeTime += Time.deltaTime;
-                    float t = sv_activeTime / s_effect_endTime;
-                    s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
-                    yield return null;
+                    hurtVolume.SetActive(true);
                 }
-                savedVolume.SetActive(false);
-                s_vignette.intensity.value = s_effect_initialIntensity;
+                else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
+                {
+                    float sv_activeTime = 0f;
+                    savedVolume.SetActive(true);
+                    while (sv_activeTime < s_effect_endTime)
+                    {
+                        sv_activeTime += Time.deltaTime;
+                        float t = sv_activeTime / s_effect_endTime;
+                        s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
+                        yield return null;
+                    }
+                    savedVolume.SetActive(false);
+                    s_vignette.intensity.value = s_effect_initialIntensity;
+                }
+                break;
             }
-
-            //Aquí tengo que hacer la comprobación de que el usuario sí tenga las botas
         }
     }
 
