@@ -42,6 +42,8 @@ public class PhaseTeleport : MonoBehaviour
     private bool hasTeleportedOneTime = false;
     private bool firstAccidentOccur = false;
 
+    public float delayBeforeTeleport = 2f;
+
     public ObjectSelection objectSelection;
 
     [SerializeField] private TareaManager tareaManager;
@@ -72,7 +74,15 @@ public class PhaseTeleport : MonoBehaviour
     public void ActivateVolume() 
     {
         if (volume == null || vignette == null) return;
-        Debug.Log("ActivateVolume()");
+        if (firstAccidentOccur) //En caso de que queramos darle cierto tiempo de espera entre los accidentes
+        {
+            float elapsedTime = 0f;
+            while (elapsedTime < delayBeforeTeleport)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / delayBeforeTeleport;
+            }
+        }
         FadeOut();
     }
     private void DeactivateVolume()
