@@ -142,9 +142,7 @@ public class TareaManager : MonoBehaviour
 
             }
             else if (objectSelection.objetosSeleccionados[index] != null)
-            {
-                
-
+            {              
                 //aquí tengo que poner el audio diciendole que ya cogió algo de ese tipo
             }
         }

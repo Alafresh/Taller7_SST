@@ -49,6 +49,8 @@ public class PhaseTeleport : MonoBehaviour
     public ObjectSelection objectSelection;
 
     [SerializeField] private TareaManager tareaManager;
+
+    public GameObject warningSignParticles;
     void Start()
     {
         volume = tp_volumeParent.GetComponent<Volume>();
@@ -188,6 +190,7 @@ public class PhaseTeleport : MonoBehaviour
                     elapsedTime += Time.deltaTime;
                     yield return null;
                 }
+                warningSignParticles.SetActive(true); //Mover esto para darle tiempo de reaccin al usuario
                 animatorAirCompressor.SetTrigger("Fall");
                 yield return new WaitUntil(() => animatorAirCompressor.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
 
