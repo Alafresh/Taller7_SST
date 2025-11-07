@@ -179,6 +179,7 @@ public class PhaseTeleport : MonoBehaviour
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
                 ActivateVolume();
+                yield break;
             }
             else if (firstAccidentOccur)
             {
