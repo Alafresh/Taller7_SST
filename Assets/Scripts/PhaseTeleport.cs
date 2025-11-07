@@ -43,6 +43,8 @@ public class PhaseTeleport : MonoBehaviour
     private bool firstAccidentOccur = false;
 
     public float delayBeforeTeleport = 2f;
+    public float delayBeforeAccident1 = 5f;
+    public float delayBeforeAccident2 = 10f;
 
     public ObjectSelection objectSelection;
 
@@ -83,15 +85,15 @@ public class PhaseTeleport : MonoBehaviour
                 float t = elapsedTime / delayBeforeTeleport;
             }
         }
-        FadeOut();
+        StartCoroutine(FadeOut());
     }
     private void DeactivateVolume()
     {
         if (volume == null || vignette == null) return;
-        FadeIn();
+        StartCoroutine(FadeIn());
     }
 
-    private void FadeOut() 
+    private IEnumerator FadeOut() 
     {
         Debug.Log("FadeOut()");
         float elapsedTime = 0f;
@@ -101,7 +103,7 @@ public class PhaseTeleport : MonoBehaviour
             float t = elapsedTime / tp_effect_endTime;
             vignette.intensity.value = Mathf.Lerp(tp_effect_initialIntensity, 1, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.white, Color.black, t);
-            //yield return null;
+            yield return null;
         }
         if (!hasTeleportedOneTime)
         {
@@ -114,7 +116,7 @@ public class PhaseTeleport : MonoBehaviour
         }
         DeactivateVolume();
     }
-    private void FadeIn()
+    private IEnumerator FadeIn()
     {
         float elapsedTime = 0f;
         while (elapsedTime < tp_effect_endTime)
@@ -123,7 +125,7 @@ public class PhaseTeleport : MonoBehaviour
             float t = elapsedTime / tp_effect_endTime;
             vignette.intensity.value = Mathf.Lerp(1f, tp_effect_initialIntensity, t);
             colorAdjustments.colorFilter.value = Color.Lerp(Color.black, Color.white, t);
-            //yield return null;
+            yield return null;
         }
         StartCoroutine(Accidents());
     }
@@ -134,7 +136,7 @@ public class PhaseTeleport : MonoBehaviour
         {
             if (!firstAccidentOccur)
             {
-                while (elapsedTime < 5f)
+                while (elapsedTime < delayBeforeAccident1)
                 {
                     elapsedTime += Time.deltaTime;
                     yield return null;
@@ -180,7 +182,7 @@ public class PhaseTeleport : MonoBehaviour
             }
             else if (firstAccidentOccur)
             {
-                while (elapsedTime < 5f)
+                while (elapsedTime < delayBeforeAccident2)
                 {
                     elapsedTime += Time.deltaTime;
                     yield return null;
