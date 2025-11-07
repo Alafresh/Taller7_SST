@@ -356,10 +356,6 @@ public class ObjectSelection : MonoBehaviour
                 break;
         }
     }
-    //public void ApagarObjeto(GameObject objeto) 
-    //{
-    //    objeto.SetActive(false);
-    //}
 }
 
 //Esta clase es para representar una categor�a de objeto y el objeto seleccionado dentro de esa categor�a

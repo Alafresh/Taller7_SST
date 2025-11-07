@@ -20,6 +20,9 @@ public class TareaManager : MonoBehaviour
 
     private int cantidadElementosCorrectos;
 
+    public Transform epps;
+    private int cantidadEppsEnEscena;
+
     private void Awake()
     {
         objetosGenerales = new EppsEnEscena[]
@@ -50,6 +53,7 @@ public class TareaManager : MonoBehaviour
     }
     private void Start()
     {
+        cantidadEppsEnEscena = epps.childCount;
         objetosCorrectos = objetosGenerales.Where(obj => obj.value).ToArray();
         foreach (EppsEnEscena obj in objetosCorrectos) 
         {
@@ -69,51 +73,19 @@ public class TareaManager : MonoBehaviour
 
         //Este switch tiene como casos, el número de la layer del objeto, que concuerda con la categoria a la que pertenece
         //El orden de las layers NO  es el mismo orden del array del inventario
-        switch (layerObj) 
+        switch (layerObj)
         {
-            case 6: //tapabocas
-                Debug.Log("Caso 6, tapabocas");
-                index = 0;
-                break;
-            case 7: //casco
-                Debug.Log("Caso 7, casco");
-                index = 3;
-                break;
-            case 8: //pantalon
-                Debug.Log("Caso 8, pantalon");
-                index = 6;
-                break;
-            case 9: //camisa
-                Debug.Log("Caso 9, camisa");
-                index = 4;
-                break;
-            case 10: //guantes
-                Debug.Log("Caso 10, guantes");
-                index = 5;
-                break;
-            case 11: //arnes
-                Debug.Log("Caso 11, arnes");
-                index = 9;
-                break;
-            case 12: //gafas
-                Debug.Log("Caso 12, gafas");
-                index = 2;
-                break;
-            case 13: //rodilleras
-                Debug.Log("Caso 13, rodilleras");
-                index = 7;
-                break;
-            case 14: //proteccion oidos
-                Debug.Log("Caso 14, proteccion oidos");
-                index = 1;
-                break;
-            case 15: //zapatos
-                Debug.Log("Caso 15, zapatos");
-                index = 8;
-                break;
-            default:
-                Debug.Log("layer no coincide con los establecidos para los EPP");
-                break;
+            case 6: index = 0; break;  // tapabocas
+            case 7: index = 3; break;  // casco
+            case 8: index = 6; break;  // pantalon
+            case 9: index = 4; break;  // camisa
+            case 10: index = 5; break; // guantes
+            case 11: index = 9; break; // arnes
+            case 12: index = 2; break; // gafas
+            case 13: index = 7; break; // rodilleras
+            case 14: index = 1; break; // oidos
+            case 15: index = 8; break; // zapatos
+            default: Debug.Log("layer no coincide con los establecidos para los EPP"); break;
         }
         foreach (EppsEnEscena obj in objetosCorrectos) 
         {
@@ -124,6 +96,23 @@ public class TareaManager : MonoBehaviour
             {
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
+                for (int i = 0; i < cantidadEppsEnEscena; i++) 
+                {
+                    GameObject eppEnEscena = epps.GetChild(i).gameObject;
+                    if (eppEnEscena.layer == objeto.layer) 
+                    {
+                        DistanceGrabInteractable interactable = eppEnEscena.GetComponent<DistanceGrabInteractable>();
+                        HandGrabInteractable handInteractable = eppEnEscena.GetComponent<HandGrabInteractable>();
+                        GrabInteractable grabInteractable = eppEnEscena.GetComponent<GrabInteractable>();
+                        DistanceHandGrabInteractable distanceHandGrab = eppEnEscena.GetComponent<DistanceHandGrabInteractable>();
+                        Grabbable grabbable = eppEnEscena.GetComponent<Grabbable>();
+                        interactable.enabled = false;
+                        handInteractable.enabled = false;
+                        grabInteractable.enabled = false;
+                        distanceHandGrab.enabled = false;
+                        grabbable.enabled = false;
+                    }
+                }
             }
             else if (tagObjeto != elementoObj && objectSelection.objetosSeleccionados[index] == null)
             {
@@ -132,19 +121,29 @@ public class TareaManager : MonoBehaviour
                 {
                     objeto.SetActive(false);
                     objectsManagerRojas.SpawnObject(objeto.transform);
+                    for (int i = 0; i < cantidadEppsEnEscena; i++)
+                    {
+                        GameObject eppEnEscena = epps.GetChild(i).gameObject;
+                        if (eppEnEscena.layer == objeto.layer)
+                        {
+                            DistanceGrabInteractable interactable = eppEnEscena.GetComponent<DistanceGrabInteractable>();
+                            HandGrabInteractable handInteractable = eppEnEscena.GetComponent<HandGrabInteractable>();
+                            GrabInteractable grabInteractable = eppEnEscena.GetComponent<GrabInteractable>();
+                            DistanceHandGrabInteractable distanceHandGrab = eppEnEscena.GetComponent<DistanceHandGrabInteractable>();
+                            Grabbable grabbable = eppEnEscena.GetComponent<Grabbable>();
+                            interactable.enabled = false;
+                            handInteractable.enabled = false;
+                            grabInteractable.enabled = false;
+                            distanceHandGrab.enabled = false;
+                            grabbable.enabled = false;
+                        }
+                    }
                 }
 
             }
             else if (objectSelection.objetosSeleccionados[index] != null)
             {
-                DistanceGrabInteractable interactable = objeto.GetComponent<DistanceGrabInteractable>();
-                HandGrabInteractable handInteractable = objeto.GetComponent<HandGrabInteractable>();
-                GrabInteractable grabInteractable = objeto.GetComponent<GrabInteractable>();
-                DistanceHandGrabInteractable distanceHandGrab = objeto.GetComponent<DistanceHandGrabInteractable>();
-                interactable.enabled = false;
-                handInteractable.enabled = false;
-                grabInteractable.enabled = false;
-                distanceHandGrab.enabled = false;
+                
 
                 //aquí tengo que poner el audio diciendole que ya cogió algo de ese tipo
             }
