@@ -2182,7 +2182,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 8000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -3258,6 +3258,9 @@ MonoBehaviour:
   player: {fileID: 1939900287}
   animatorBrick: {fileID: 981327187}
   animatorAirCompressor: {fileID: 1350711906}
+  delayBeforeTeleport: 2
+  delayBeforeAccident1: 5
+  delayBeforeAccident2: 10
   objectSelection: {fileID: 222058729}
   tareaManager: {fileID: 222058730}
 --- !u!1 &230215010
@@ -9741,7 +9744,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 8000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -15484,6 +15487,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 643697019}
+    - target: {fileID: 3903482226883268838, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4148778239110795873, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] OVRInteractionComprehensive'
@@ -23321,7 +23328,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 8000
   field of view: 60
   orthographic: 0
   orthographic size: 5
