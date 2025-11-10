@@ -3340,9 +3340,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: Audifonos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
       propertyPath: Rodilleras
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 222058733}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
       propertyPath: Guantes_Algodon
       value: 1
@@ -3359,6 +3367,10 @@ PrefabInstance:
       propertyPath: Tapabocas_Filtros
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
+      propertyPath: animatorObreroBueno
+      value: 
+      objectReference: {fileID: 4581014588973105220}
     - target: {fileID: 3846679228634650337, guid: edccdee3c79f294499c2c94e3de25e97, type: 3}
       propertyPath: objectsManagerRojas
       value: 
@@ -3472,8 +3484,9 @@ MonoBehaviour:
   warningSignParticles: {fileID: 1751674804}
   audioManager: {fileID: 222058733}
   audioSourceComplementary: {fileID: 288091732}
+  ambulancia: {fileID: 8300000, guid: 37ddeab420c91e9428d9dd088f7e5ee3, type: 3}
   obreroBueno: {fileID: 3808031889117125369}
-  animatorObreroBueno: {fileID: 0}
+  animatorObreroBueno: {fileID: 4581014588973105220}
 --- !u!114 &222058733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13018,6 +13031,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 92e525fa33c1a8d48ab8c07dc339ff99, type: 3}
+      propertyPath: m_TagString
+      value: Jean
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13386,6 +13403,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
+      propertyPath: m_TagString
+      value: "Aud\xEDfonos"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15609,6 +15630,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f0a0fbeac6279740a331e3d8b0b8aae, type: 3}
+      propertyPath: m_TagString
+      value: Tapones
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16809,6 +16834,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
+      propertyPath: m_TagString
+      value: Tenis
       objectReference: {fileID: 0}
     - target: {fileID: 7071182760956848314, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
       propertyPath: m_Materials.Array.size
@@ -21415,6 +21444,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3614816ef03a19249887a78d3e150747, type: 3}
+      propertyPath: m_TagString
+      value: Tapabocas_Covid
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24709,6 +24742,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
+      propertyPath: m_TagString
+      value: Sudadera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32230,6 +32267,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dcf9aedeac2dab54aaf86a1a52e10c61, type: 3}
+      propertyPath: m_TagString
+      value: Gafas_Protectoras
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33087,7 +33128,7 @@ Transform:
   m_GameObject: {fileID: 1939900287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.059, y: 0.647, z: 24.771}
+  m_LocalPosition: {x: -3.005, y: 0.647, z: 24.771}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33220,6 +33261,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
+      propertyPath: m_TagString
+      value: Arnes
       objectReference: {fileID: 0}
     - target: {fileID: 6929029884625546409, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
       propertyPath: m_Layer
@@ -36051,6 +36096,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20399af43c0e1584f847c660c34691b1, type: 3}
+      propertyPath: m_TagString
+      value: Camiseta
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37061,6 +37110,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
+      propertyPath: m_TagString
+      value: Camisa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68039,7 +68092,7 @@ Transform:
   m_GameObject: {fileID: 3808031889117125369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.912, y: 0.63900006, z: 25.647}
+  m_LocalPosition: {x: -2.858, y: 0.63900006, z: 25.647}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:

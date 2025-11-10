@@ -4,6 +4,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PhaseTeleport : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PhaseTeleport : MonoBehaviour
 
     private bool hasTeleportedOneTime = false;
     private bool firstAccidentOccur = false;
+    private bool lastAccidentOccur = false;
 
     public float delayBeforeTeleport = 2f;
     public float delayBeforeAccident1 = 5f;
@@ -54,6 +56,7 @@ public class PhaseTeleport : MonoBehaviour
 
     public AudioManager audioManager;
     public AudioSource audioSourceComplementary;
+    public AudioClip ambulancia;
 
     public GameObject obreroBueno;
     public Animator animatorObreroBueno;
@@ -120,11 +123,15 @@ public class PhaseTeleport : MonoBehaviour
             obreroBueno.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             hasTeleportedOneTime = true;
         }
-        else 
+        else if(hasTeleportedOneTime && !lastAccidentOccur)
         {
             player.transform.position = waypoint2.transform.position;
             obreroBueno.transform.position = waypoint2.transform.position + new Vector3(0f, 0f,1.5f);
             obreroBueno.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+        else if (lastAccidentOccur)
+        {
+            yield break;
         }
         DeactivateVolume();
     }
@@ -215,7 +222,7 @@ public class PhaseTeleport : MonoBehaviour
                     animatorAirCompressor.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f &&
                     !animatorAirCompressor.IsInTransition(0)
                 );
-
+                lastAccidentOccur = true;
                 animatorAirCompressor.transform.gameObject.SetActive(false);
                 warningSignParticles.SetActive(false);
                 if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco)
@@ -250,10 +257,11 @@ public class PhaseTeleport : MonoBehaviour
     }
     private IEnumerator EndExperience() 
     {
-
-
-        yield return new WaitForSeconds(5f); //Cambiar este tiempo dependiendo de lo que se demoren los audios finales
-
-        StopAllCoroutines();
+        yield return StartCoroutine(FadeOut());
+        audioSourceComplementary.clip = ambulancia;
+        audioSourceComplementary.Play();
+        yield return new WaitWhile(() => audioSourceComplementary.isPlaying);
+        SceneManager.LoadScene("EndingScene");
+        yield break;
     }
 }
