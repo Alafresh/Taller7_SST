@@ -43,6 +43,7 @@ public class PhaseTeleport : MonoBehaviour
     private bool hasTeleportedOneTime = false;
     private bool firstAccidentOccur = false;
     private bool lastAccidentOccur = false;
+    private bool playerDied = false;
 
     public float delayBeforeTeleport = 2f;
     public float delayBeforeAccident1 = 5f;
@@ -229,6 +230,7 @@ public class PhaseTeleport : MonoBehaviour
                 {
                     audioManager.PlayByIndex(5);
                     hurtVolume.SetActive(true);
+                    playerDied = true;
                 }
                 else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
                 {
@@ -258,8 +260,11 @@ public class PhaseTeleport : MonoBehaviour
     private IEnumerator EndExperience() 
     {
         yield return StartCoroutine(FadeOut());
-        audioSourceComplementary.clip = ambulancia;
-        audioSourceComplementary.Play();
+        if (playerDied)
+        {
+            audioSourceComplementary.clip = ambulancia;
+            audioSourceComplementary.Play();
+        }
         yield return new WaitWhile(() => audioSourceComplementary.isPlaying);
         SceneManager.LoadScene("EndingScene");
         yield break;
