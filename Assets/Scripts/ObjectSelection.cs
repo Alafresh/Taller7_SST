@@ -8,35 +8,41 @@ using UnityEngine;
 // El enum tiene los nombre de todos los objetos que hay en la experiencia (estos nombres tambi� son los tags que llevar�n los game objects).
 
 //Este enum contiene todos los objetos que se pueden seleccionar en la escena
-public enum Objeto
+
+public class EppsEnEscena 
 {
-    Botas_Protectoras, Tenis, Tapones, Audifonos, Rodilleras, Gafas_Protectoras, Arnes,
-    Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
-    Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros
+    public enum Objeto
+    {
+        Botas_Protectoras, Tenis, Tapones, Audifonos, Rodilleras, Gafas_Protectoras, Arnes,
+        Guantes_Cuero, Guantes_Nitrilo, Guantes_Algodon, Guantes_Neopreno, Guantes_PVC, Guantes_Kevlar,
+        Camisa, Camiseta, Jean, Sudadera, Casco, Gorra, Tapabocas_Covid, Tapabocas_Particulas, Tapabocas_Filtros
+    }
+
+    public Objeto elemento;
+    public bool value;  //esto dice si es bueno o malo en la tarea
 }
 
-public class ObjectSelection : MonoBehaviour
-{
-    [SerializeField] private GameObject pinkParticles;    [SerializeField] private GameObject blueParticles;   [SerializeField] private GameObject yellowParticles; [SerializeField] private GameObject greenParticles; [SerializeField] private GameObject orangeParticles;  // part�culas de colores
 
-    public Categoria[] objetosSeleccionados = new Categoria[10];
+public class ObjectSelection : MonoBehaviour
+{  
+    public  Categoria[] objetosSeleccionados = new Categoria[10];
     public int numeroDeObjetosSeleccionados = 0;
-    public Objeto objetoSeleccionado;
+    public EppsEnEscena.Objeto objetoSeleccionado;
 
     
-    //Esta funci�n es la que se encarga de la l�gica despu�s de que se selecciona un objeto
     public void SeleccionarObjeto(int objeto)
     {       
-        Debug.Log("Objeto seleccionado: " + (Objeto)objeto);
-        switch ((Objeto)objeto)
+        Debug.Log("Objeto seleccionado: " + (EppsEnEscena.Objeto)objeto);
+        switch ((EppsEnEscena.Objeto)objeto)
         {
-            case Objeto.Botas_Protectoras:
+            case EppsEnEscena.Objeto.Botas_Protectoras:
                 Categoria botasProtectoras = new Categoria();
                 botasProtectoras.tipo = Categoria.Tipo.Zapatos;
-                botasProtectoras.objetoSeleccionado = Objeto.Botas_Protectoras;
+                botasProtectoras.objetoSeleccionado = EppsEnEscena.Objeto.Botas_Protectoras;
                 if(objetosSeleccionados[8] == null || objetosSeleccionados[8].tipo != Categoria.Tipo.Zapatos) 
                 {
                     objetosSeleccionados[8] = botasProtectoras;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else 
@@ -44,13 +50,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Zapatos en el array");
                 }
                 break;
-            case Objeto.Tenis:
+            case EppsEnEscena.Objeto.Tenis:
                 Categoria tenis = new Categoria();
                 tenis.tipo = Categoria.Tipo.Zapatos;
-                tenis.objetoSeleccionado = Objeto.Tenis;
+                tenis.objetoSeleccionado = EppsEnEscena.Objeto.Tenis;
                 if (objetosSeleccionados[8] == null || objetosSeleccionados[8].tipo != Categoria.Tipo.Zapatos)
                 {
                     objetosSeleccionados[8] = tenis;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -58,13 +65,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Zapatos en el array");
                 }   
                 break;
-            case Objeto.Tapones:
+            case EppsEnEscena.Objeto.Tapones:
                 Categoria tapones = new Categoria();
                 tapones.tipo = Categoria.Tipo.Oidos;
-                tapones.objetoSeleccionado = Objeto.Tapones;
+                tapones.objetoSeleccionado = EppsEnEscena.Objeto.Tapones;
                 if (objetosSeleccionados[1] == null || objetosSeleccionados[1].tipo != Categoria.Tipo.Oidos)
                 {
                     objetosSeleccionados[1] = tapones;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -72,13 +80,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Oidos en el array");
                 } 
                 break;
-            case Objeto.Audifonos:
+            case EppsEnEscena.Objeto.Audifonos:
                 Categoria audifonos = new Categoria();
                 audifonos.tipo = Categoria.Tipo.Oidos;
-                audifonos.objetoSeleccionado = Objeto.Audifonos;
+                audifonos.objetoSeleccionado = EppsEnEscena.Objeto.Audifonos;
                 if (objetosSeleccionados[1] == null || objetosSeleccionados[1].tipo != Categoria.Tipo.Oidos)
                 {
                     objetosSeleccionados[1] = audifonos;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -86,13 +95,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Oidos en el array");
                 }
                 break;
-            case Objeto.Rodilleras:
+            case EppsEnEscena.Objeto.Rodilleras:
                 Categoria rodilleras = new Categoria();
                 rodilleras.tipo = Categoria.Tipo.Rodilleras;
-                rodilleras.objetoSeleccionado = Objeto.Rodilleras;
+                rodilleras.objetoSeleccionado = EppsEnEscena.Objeto.Rodilleras;
                 if (objetosSeleccionados[7] == null || objetosSeleccionados[7].tipo != Categoria.Tipo.Rodilleras)
                 {
                     objetosSeleccionados[7] = rodilleras;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -100,13 +110,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Rodilleras en el array" );
                 }
                 break;
-            case Objeto.Gafas_Protectoras:
+            case EppsEnEscena.Objeto.Gafas_Protectoras:
                 Categoria gafas = new Categoria();
                 gafas.tipo = Categoria.Tipo.Gafas;
-                gafas.objetoSeleccionado = Objeto.Gafas_Protectoras;
+                gafas.objetoSeleccionado = EppsEnEscena.Objeto.Gafas_Protectoras;
                 if (objetosSeleccionados[2] == null || objetosSeleccionados[2].tipo != Categoria.Tipo.Gafas)
                 {
                     objetosSeleccionados[2] = gafas;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -114,13 +125,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Gafas en el array");
                 }
                 break;
-            case Objeto.Arnes:
+            case EppsEnEscena.Objeto.Arnes:
                 Categoria arnes = new Categoria();
                 arnes.tipo = Categoria.Tipo.Arnes;
-                arnes.objetoSeleccionado = Objeto.Arnes;
+                arnes.objetoSeleccionado = EppsEnEscena.Objeto.Arnes;
                 if (objetosSeleccionados[9] == null || objetosSeleccionados[9].tipo != Categoria.Tipo.Arnes)
                 {
                     objetosSeleccionados[9] = arnes;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -128,13 +140,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Arnes en el array");
                 }               
                 break;
-            case Objeto.Guantes_Cuero:
+            case EppsEnEscena.Objeto.Guantes_Cuero:
                 Categoria guantesCuero = new Categoria();
                 guantesCuero.tipo = Categoria.Tipo.Guantes;
-                guantesCuero.objetoSeleccionado = Objeto.Guantes_Cuero;
+                guantesCuero.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_Cuero;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesCuero;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -142,13 +155,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Guantes en el array");
                 }
                 break;
-            case Objeto.Guantes_Nitrilo:
+            case EppsEnEscena.Objeto.Guantes_Nitrilo:
                 Categoria guantesNitrilo = new Categoria();
                 guantesNitrilo.tipo = Categoria.Tipo.Guantes;
-                guantesNitrilo.objetoSeleccionado = Objeto.Guantes_Nitrilo;
+                guantesNitrilo.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_Nitrilo;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesNitrilo;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -157,13 +171,14 @@ public class ObjectSelection : MonoBehaviour
                 }
                 
                 break;
-            case Objeto.Guantes_Algodon:
+            case EppsEnEscena.Objeto.Guantes_Algodon:
                 Categoria guantesAlgodon = new Categoria();
                 guantesAlgodon.tipo = Categoria.Tipo.Guantes;
-                guantesAlgodon.objetoSeleccionado = Objeto.Guantes_Algodon;
+                guantesAlgodon.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_Algodon;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesAlgodon;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -171,13 +186,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Guantes en el array");
                 }
                 break;
-            case Objeto.Guantes_Neopreno:
+            case EppsEnEscena.Objeto.Guantes_Neopreno:
                 Categoria guantesNeopreno = new Categoria();
                 guantesNeopreno.tipo = Categoria.Tipo.Guantes;
-                guantesNeopreno.objetoSeleccionado = Objeto.Guantes_Neopreno;
+                guantesNeopreno.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_Neopreno;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesNeopreno;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -185,13 +201,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Guantes en el array");
                 }
                 break;
-            case Objeto.Guantes_PVC:
+            case EppsEnEscena.Objeto.Guantes_PVC:
                 Categoria guantesPVC = new Categoria();
                 guantesPVC.tipo = Categoria.Tipo.Guantes;
-                guantesPVC.objetoSeleccionado = Objeto.Guantes_PVC;
+                guantesPVC.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_PVC;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesPVC;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -199,13 +216,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Guantes en el array");
                 }    
                 break;
-            case Objeto.Guantes_Kevlar:
+            case EppsEnEscena.Objeto.Guantes_Kevlar:
                 Categoria guantesKevlar = new Categoria();
                 guantesKevlar.tipo = Categoria.Tipo.Guantes;
-                guantesKevlar.objetoSeleccionado = Objeto.Guantes_Kevlar;
+                guantesKevlar.objetoSeleccionado = EppsEnEscena.Objeto.Guantes_Kevlar;
                 if (objetosSeleccionados[5] == null || objetosSeleccionados[5].tipo != Categoria.Tipo.Guantes)
                 {
                     objetosSeleccionados[5] = guantesKevlar;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -213,13 +231,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Guantes en el array");
                 } 
                 break;
-            case Objeto.Camisa:
+            case EppsEnEscena.Objeto.Camisa:
                 Categoria camisa = new Categoria();
                 camisa.tipo = Categoria.Tipo.Camisa;
-                camisa.objetoSeleccionado = Objeto.Camisa;
+                camisa.objetoSeleccionado = EppsEnEscena.Objeto.Camisa;
                 if (objetosSeleccionados[4] == null || objetosSeleccionados[4].tipo != Categoria.Tipo.Camisa)
                 {
                     objetosSeleccionados[4] = camisa;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -227,13 +246,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Camisa en el array");
                 }  
                 break;
-            case Objeto.Camiseta:
+            case EppsEnEscena.Objeto.Camiseta:
                 Categoria camiseta = new Categoria();
                 camiseta.tipo = Categoria.Tipo.Camisa;
-                camiseta.objetoSeleccionado = Objeto.Camiseta;
+                camiseta.objetoSeleccionado = EppsEnEscena.Objeto.Camiseta;
                 if (objetosSeleccionados[4] == null || objetosSeleccionados[4].tipo != Categoria.Tipo.Camisa)
                 {
                     objetosSeleccionados[4] = camiseta;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -241,10 +261,10 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Camisa en el array");
                 }      
                 break;
-            case Objeto.Jean:
+            case EppsEnEscena.Objeto.Jean:
                 Categoria jean = new Categoria();
                 jean.tipo = Categoria.Tipo.Pantalon;
-                jean.objetoSeleccionado = Objeto.Jean;
+                jean.objetoSeleccionado = EppsEnEscena.Objeto.Jean;
                 if (objetosSeleccionados[6] == null || objetosSeleccionados[6].tipo != Categoria.Tipo.Pantalon)
                 {
                     objetosSeleccionados[6] = jean;
@@ -256,13 +276,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Pantalon en el array");
                 }   
                 break;
-            case Objeto.Sudadera:
+            case EppsEnEscena.Objeto.Sudadera:
                 Categoria sudadera = new Categoria();
                 sudadera.tipo = Categoria.Tipo.Pantalon;
-                sudadera.objetoSeleccionado = Objeto.Sudadera;
+                sudadera.objetoSeleccionado = EppsEnEscena.Objeto.Sudadera;
                 if (objetosSeleccionados[6] == null || objetosSeleccionados[6].tipo != Categoria.Tipo.Pantalon)
                 {
                     objetosSeleccionados[6] = sudadera;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -270,13 +291,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Pantalon en el array");
                 }
                 break;
-            case Objeto.Casco:
+            case EppsEnEscena.Objeto.Casco:
                 Categoria casco = new Categoria();
                 casco.tipo = Categoria.Tipo.Cabeza;
-                casco.objetoSeleccionado = Objeto.Casco;
+                casco.objetoSeleccionado = EppsEnEscena.Objeto.Casco;
                 if (objetosSeleccionados[3] == null || objetosSeleccionados[3].tipo != Categoria.Tipo.Cabeza)
                 {
                     objetosSeleccionados[3] = casco;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -284,13 +306,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Cabeza en el array");
                 }
                 break;
-            case Objeto.Tapabocas_Covid:
+            case EppsEnEscena.Objeto.Tapabocas_Covid:
                 Categoria tapabocasCovid = new Categoria();
                 tapabocasCovid.tipo = Categoria.Tipo.Tapabocas;
-                tapabocasCovid.objetoSeleccionado = Objeto.Tapabocas_Covid;
+                tapabocasCovid.objetoSeleccionado = EppsEnEscena.Objeto.Tapabocas_Covid;
                 if (objetosSeleccionados[0] == null || objetosSeleccionados[0].tipo != Categoria.Tipo.Tapabocas)
                 {
                     objetosSeleccionados[0] = tapabocasCovid;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -298,13 +321,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Tapabocas en el array");
                 }
                 break;
-            case Objeto.Tapabocas_Particulas:
+            case EppsEnEscena.Objeto.Tapabocas_Particulas:
                 Categoria tapabocasParticulas = new Categoria();
                 tapabocasParticulas.tipo = Categoria.Tipo.Tapabocas;
-                tapabocasParticulas.objetoSeleccionado = Objeto.Tapabocas_Particulas;
+                tapabocasParticulas.objetoSeleccionado = EppsEnEscena.Objeto.Tapabocas_Particulas;
                 if (objetosSeleccionados[0] == null || objetosSeleccionados[0].tipo != Categoria.Tipo.Tapabocas)
                 {
                     objetosSeleccionados[0] = tapabocasParticulas;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -312,13 +336,14 @@ public class ObjectSelection : MonoBehaviour
                     Debug.Log("No se pudo agregar el elemento de tipo Tapabocas en el array");
                 }
                 break;
-            case Objeto.Tapabocas_Filtros:
+            case EppsEnEscena.Objeto.Tapabocas_Filtros:
                 Categoria tapabocasFiltros = new Categoria();
                 tapabocasFiltros.tipo = Categoria.Tipo.Tapabocas;
-                tapabocasFiltros.objetoSeleccionado = Objeto.Tapabocas_Filtros;
+                tapabocasFiltros.objetoSeleccionado = EppsEnEscena.Objeto.Tapabocas_Filtros;
                 if (objetosSeleccionados[0] == null || objetosSeleccionados[0].tipo != Categoria.Tipo.Tapabocas)
                 {
                     objetosSeleccionados[0] = tapabocasFiltros;
+                    Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
                 }
                 else
@@ -342,6 +367,6 @@ public class Categoria
     }
 
     public Tipo tipo; 
-    public Objeto objetoSeleccionado;
+    public EppsEnEscena.Objeto objetoSeleccionado;
 }
 
