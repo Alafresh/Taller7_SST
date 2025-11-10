@@ -13014,6 +13014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jean
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 92e525fa33c1a8d48ab8c07dc339ff99, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13042,6 +13046,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 92e525fa33c1a8d48ab8c07dc339ff99, type: 3}
       insertIndex: -1
       addedObject: {fileID: 854165271}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 92e525fa33c1a8d48ab8c07dc339ff99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 854165279}
   m_SourcePrefab: {fileID: 100100000, guid: 92e525fa33c1a8d48ab8c07dc339ff99, type: 3}
 --- !u!4 &854165269 stripped
 Transform:
@@ -13065,7 +13072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 854165278}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -13078,13 +13085,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 854165270}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13097,7 +13104,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13124,10 +13131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 854165277}
+  - {fileID: 854165276}
+  - {fileID: 854165275}
+  - {fileID: 854165274}
   _data: {fileID: 0}
 --- !u!54 &854165273
 Rigidbody:
@@ -13173,7 +13180,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 854165278}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 854165273}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -13211,8 +13218,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 854165278}
+  _rigidbody: {fileID: 854165273}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -13233,8 +13240,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 854165278}
+  _rigidbody: {fileID: 854165273}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -13257,7 +13264,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 854165278}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 854165273}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -13303,6 +13310,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &854165279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854165270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0033143912, y: 0.0015270947, z: 0.0080147935}
+  m_Center: {x: 0.00015296519, y: 2.9103825e-11, z: -0.0024747523}
 --- !u!1001 &860491423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13355,6 +13383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audifonos
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13383,6 +13415,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
       insertIndex: -1
       addedObject: {fileID: 860491426}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 860491434}
   m_SourcePrefab: {fileID: 100100000, guid: 75b647d3962180f4cb6c40f1e568a918, type: 3}
 --- !u!4 &860491424 stripped
 Transform:
@@ -13406,7 +13441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 860491433}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -13419,13 +13454,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 860491425}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13438,7 +13473,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13465,10 +13500,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 860491432}
+  - {fileID: 860491431}
+  - {fileID: 860491430}
+  - {fileID: 860491429}
   _data: {fileID: 0}
 --- !u!54 &860491428
 Rigidbody:
@@ -13514,7 +13549,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 860491433}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 860491428}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -13552,8 +13587,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 860491433}
+  _rigidbody: {fileID: 860491428}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -13574,8 +13609,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 860491433}
+  _rigidbody: {fileID: 860491428}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -13598,7 +13633,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 860491433}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 860491428}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -13644,6 +13679,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &860491434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860491425}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0027706632, y: 0.0009100367, z: 0.0026436879}
+  m_Center: {x: 0.0000000037252903, y: -0.000000014901161, z: 0.001366872}
 --- !u!1001 &861599221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15549,6 +15605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tapones oidos
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f0a0fbeac6279740a331e3d8b0b8aae, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15577,6 +15637,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f0a0fbeac6279740a331e3d8b0b8aae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 926300903}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f0a0fbeac6279740a331e3d8b0b8aae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 926300911}
   m_SourcePrefab: {fileID: 100100000, guid: 5f0a0fbeac6279740a331e3d8b0b8aae, type: 3}
 --- !u!4 &926300901 stripped
 Transform:
@@ -15600,7 +15663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 926300910}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -15613,13 +15676,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 926300902}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15632,7 +15695,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15659,10 +15722,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 926300909}
+  - {fileID: 926300908}
+  - {fileID: 926300907}
+  - {fileID: 926300906}
   _data: {fileID: 0}
 --- !u!54 &926300905
 Rigidbody:
@@ -15708,7 +15771,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 926300910}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 926300905}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -15746,8 +15809,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 926300910}
+  _rigidbody: {fileID: 926300905}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -15768,8 +15831,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 926300910}
+  _rigidbody: {fileID: 926300905}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -15792,7 +15855,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 926300910}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 926300905}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -15838,6 +15901,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &926300911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926300902}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00034305127, y: 0.00034305124, z: 0.00046834853}
+  m_Center: {x: -1.4551915e-11, y: 0, z: -0.000006605222}
 --- !u!114 &933016072 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2922565180446635899, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
@@ -16714,10 +16798,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
       propertyPath: m_Name
       value: tenis
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7071182760956848314, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -16742,6 +16834,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 37c06889f54b8bb419cb9445254a357a, type: 2}
+    - target: {fileID: 8513859187771203891, guid: f13efcaa17169d949a575facbc39f32b, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16793,7 +16889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1039024152}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -16806,13 +16902,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1039024144}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16825,7 +16921,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16852,10 +16948,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1039024151}
+  - {fileID: 1039024150}
+  - {fileID: 1039024149}
+  - {fileID: 1039024148}
   _data: {fileID: 0}
 --- !u!54 &1039024147
 Rigidbody:
@@ -16901,7 +16997,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1039024152}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1039024147}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -16939,8 +17035,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1039024152}
+  _rigidbody: {fileID: 1039024147}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -16961,8 +17057,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1039024152}
+  _rigidbody: {fileID: 1039024147}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -16985,7 +17081,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1039024152}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1039024147}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -21315,6 +21411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TAPA BOCAS
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3614816ef03a19249887a78d3e150747, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21343,6 +21443,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3614816ef03a19249887a78d3e150747, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1298525896}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3614816ef03a19249887a78d3e150747, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1298525904}
   m_SourcePrefab: {fileID: 100100000, guid: 3614816ef03a19249887a78d3e150747, type: 3}
 --- !u!4 &1298525894 stripped
 Transform:
@@ -21366,7 +21469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1298525903}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -21379,13 +21482,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1298525895}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21398,7 +21501,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21425,10 +21528,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1298525902}
+  - {fileID: 1298525901}
+  - {fileID: 1298525900}
+  - {fileID: 1298525899}
   _data: {fileID: 0}
 --- !u!54 &1298525898
 Rigidbody:
@@ -21474,7 +21577,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1298525903}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1298525898}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -21513,7 +21616,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1298525898}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -21534,8 +21637,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1298525903}
+  _rigidbody: {fileID: 1298525898}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -21558,7 +21661,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1298525903}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1298525898}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -21604,6 +21707,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &1298525904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298525895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14227328, y: 0.0037276756, z: 0.01715463}
+  m_Center: {x: 0.00026918278, y: -0.0027304178, z: 0.0013329225}
 --- !u!1001 &1303331658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24582,6 +24706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sudadera
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24610,6 +24738,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1465122784}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1465122792}
   m_SourcePrefab: {fileID: 100100000, guid: 6999ea4ee6237be42bed996c062c84ae, type: 3}
 --- !u!4 &1465122782 stripped
 Transform:
@@ -24633,7 +24764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1465122791}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -24646,13 +24777,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1465122783}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -24665,7 +24796,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24692,10 +24823,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1465122790}
+  - {fileID: 1465122789}
+  - {fileID: 1465122788}
+  - {fileID: 1465122787}
   _data: {fileID: 0}
 --- !u!54 &1465122786
 Rigidbody:
@@ -24741,7 +24872,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1465122791}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1465122786}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -24779,8 +24910,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1465122791}
+  _rigidbody: {fileID: 1465122786}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -24801,8 +24932,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1465122791}
+  _rigidbody: {fileID: 1465122786}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -24825,7 +24956,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1465122791}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1465122786}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -24871,6 +25002,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &1465122792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465122783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00472425, y: 0.0011774027, z: 0.008558636}
+  m_Center: {x: 0.00024066062, y: 0, z: 0.0025495251}
 --- !u!1001 &1466444664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32074,6 +32226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gafas
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dcf9aedeac2dab54aaf86a1a52e10c61, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32102,6 +32258,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dcf9aedeac2dab54aaf86a1a52e10c61, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1927914476}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dcf9aedeac2dab54aaf86a1a52e10c61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1927914484}
   m_SourcePrefab: {fileID: 100100000, guid: dcf9aedeac2dab54aaf86a1a52e10c61, type: 3}
 --- !u!4 &1927914474 stripped
 Transform:
@@ -32125,7 +32284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1927914483}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -32138,13 +32297,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1927914475}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -32157,7 +32316,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -32184,10 +32343,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1927914482}
+  - {fileID: 1927914481}
+  - {fileID: 1927914480}
+  - {fileID: 1927914479}
   _data: {fileID: 0}
 --- !u!54 &1927914478
 Rigidbody:
@@ -32233,7 +32392,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1927914483}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1927914478}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -32271,8 +32430,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1927914483}
+  _rigidbody: {fileID: 1927914478}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -32293,8 +32452,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1927914483}
+  _rigidbody: {fileID: 1927914478}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -32317,7 +32476,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1927914483}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1927914478}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -32363,6 +32522,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &1927914484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927914475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0018000003, y: 0.0017075217, z: 0.0005902195}
+  m_Center: {x: 0, y: 0.0005062514, z: 0.0007699233}
 --- !u!1 &1930695608
 GameObject:
   m_ObjectHideFlags: 0
@@ -33029,9 +33209,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3281589340962922293, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
       propertyPath: m_Name
       value: "Arn\xE9s"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929029884625546409, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33061,6 +33253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1947820226}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1947820234}
   m_SourcePrefab: {fileID: 100100000, guid: 8a6300251a0dc614b969b503f95644d4, type: 3}
 --- !u!4 &1947820224 stripped
 Transform:
@@ -33084,7 +33279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 1947820233}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -33097,13 +33292,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1947820225}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -33116,7 +33311,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -33143,10 +33338,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1947820232}
+  - {fileID: 1947820231}
+  - {fileID: 1947820230}
+  - {fileID: 1947820229}
   _data: {fileID: 0}
 --- !u!54 &1947820228
 Rigidbody:
@@ -33192,7 +33387,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1947820233}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1947820228}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -33230,8 +33425,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1947820233}
+  _rigidbody: {fileID: 1947820228}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -33252,8 +33447,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1947820233}
+  _rigidbody: {fileID: 1947820228}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -33276,7 +33471,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 1947820233}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1947820228}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -33322,6 +33517,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &1947820234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947820225}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.765813, z: 0.28}
+  m_Center: {x: 0, y: 0.45237905, z: 0}
 --- !u!1 &1957201469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 9c75cb840ca232142afc36166ce2120f, type: 3}
@@ -35831,6 +36047,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CAMISA '
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20399af43c0e1584f847c660c34691b1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35859,6 +36079,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20399af43c0e1584f847c660c34691b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2066725683}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20399af43c0e1584f847c660c34691b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2066725691}
   m_SourcePrefab: {fileID: 100100000, guid: 20399af43c0e1584f847c660c34691b1, type: 3}
 --- !u!4 &2066725681 stripped
 Transform:
@@ -35882,7 +36105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 2066725690}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -35895,13 +36118,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2066725682}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -35914,7 +36137,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -35941,10 +36164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2066725689}
+  - {fileID: 2066725688}
+  - {fileID: 2066725687}
+  - {fileID: 2066725686}
   _data: {fileID: 0}
 --- !u!54 &2066725685
 Rigidbody:
@@ -35990,7 +36213,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 2066725690}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2066725685}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -36028,8 +36251,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 2066725690}
+  _rigidbody: {fileID: 2066725685}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -36050,8 +36273,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 2066725690}
+  _rigidbody: {fileID: 2066725685}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -36074,7 +36297,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 2066725690}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2066725685}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -36120,6 +36343,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &2066725691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066725682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0050758957, y: 0.004108608, z: 0.0010206553}
+  m_Center: {x: 0.000009104759, y: -0.000052774845, z: 0.00025668833}
 --- !u!1001 &2069838337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36814,6 +37058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CAMISA MANGA LARGA
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -36842,6 +37090,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2110279546}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110279554}
   m_SourcePrefab: {fileID: 100100000, guid: 99b4061a0822b9648a18f2bdb85ba967, type: 3}
 --- !u!4 &2110279544 stripped
 Transform:
@@ -36865,7 +37116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointable: {fileID: 0}
+  _pointable: {fileID: 2110279553}
   _whenRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -36878,13 +37129,13 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222058730}
+        m_TargetAssemblyTypeName: TareaManager, Assembly-CSharp
+        m_MethodName: ApagarYPrenderParticulas
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2110279545}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -36897,7 +37148,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -36924,10 +37175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2110279552}
+  - {fileID: 2110279551}
+  - {fileID: 2110279550}
+  - {fileID: 2110279549}
   _data: {fileID: 0}
 --- !u!54 &2110279548
 Rigidbody:
@@ -36973,7 +37224,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 2110279553}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2110279548}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _slippiness: 0
@@ -37011,8 +37262,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 2110279553}
+  _rigidbody: {fileID: 2110279548}
   _grabSource: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
@@ -37033,8 +37284,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 2110279553}
+  _rigidbody: {fileID: 2110279548}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -37057,7 +37308,7 @@ MonoBehaviour:
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
   _pointableElement: {fileID: 2110279553}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 2110279548}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -37103,6 +37354,27 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!65 &2110279554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110279545}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0060001393, y: 0.004295363, z: 0.0010670488}
+  m_Center: {x: -0.00004410386, y: -0.00005517289, z: 0.0002683559}
 --- !u!1 &2112347152
 GameObject:
   m_ObjectHideFlags: 0
