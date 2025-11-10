@@ -14,6 +14,7 @@ public class HandPosesDetector : MonoBehaviour
     public PhaseTeleport phaseTeleport;
 
     public AudioManager audioManager;
+    public Animator animatorObreroBueno;
 
     protected virtual void Awake()
     {
@@ -31,6 +32,7 @@ public class HandPosesDetector : MonoBehaviour
     private void OnThumbsUp() 
     {
         audioManager.PlayByIndex(1);
+        animatorObreroBueno.SetTrigger("EPP_Escogidos");
         phaseTeleport.ActivateVolume();
     }
 }

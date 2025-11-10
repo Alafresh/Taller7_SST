@@ -54,6 +54,9 @@ public class PhaseTeleport : MonoBehaviour
 
     public AudioManager audioManager;
     public AudioSource audioSourceComplementary;
+
+    public GameObject obreroBueno;
+    public Animator animatorObreroBueno;
     void Start()
     {
         volume = tp_volumeParent.GetComponent<Volume>();
@@ -113,11 +116,15 @@ public class PhaseTeleport : MonoBehaviour
         if (!hasTeleportedOneTime)
         {
             player.transform.position = waypoint1.transform.position;
+            obreroBueno.transform.position = waypoint1.transform.position + new Vector3(1.5f, 0f, 0f);
+            obreroBueno.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
             hasTeleportedOneTime = true;
         }
         else 
         {
             player.transform.position = waypoint2.transform.position;
+            obreroBueno.transform.position = waypoint2.transform.position + new Vector3(0f, 0f,1.5f);
+            obreroBueno.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
         DeactivateVolume();
     }
@@ -188,6 +195,8 @@ public class PhaseTeleport : MonoBehaviour
                     savedVolume.SetActive(false);
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
+                audioManager.PlayByIndex(6);
+                animatorObreroBueno.SetTrigger("Thumbs Up");
                 ActivateVolume();
                 yield break;
             }

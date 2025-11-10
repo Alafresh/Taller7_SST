@@ -24,6 +24,7 @@ public class TareaManager : MonoBehaviour
     private int cantidadEppsEnEscena;
 
     public AudioManager audioManager;
+    public Animator animatorObreroBueno;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class TareaManager : MonoBehaviour
     {
         cantidadEppsEnEscena = epps.childCount;
         objetosCorrectos = objetosGenerales.Where(obj => obj.value).ToArray();
+        animatorObreroBueno.SetTrigger("Introduccion");
         foreach (EppsEnEscena obj in objetosCorrectos) 
         {
             if (obj != null) 
@@ -98,6 +100,8 @@ public class TareaManager : MonoBehaviour
             {
                 objeto.SetActive(false);
                 ObjectsManagerVerdes.SpawnObject(objeto.transform);
+                audioManager.PlayByIndex(12);
+                animatorObreroBueno.SetTrigger("BuenaEleccion");
                 for (int i = 0; i < cantidadEppsEnEscena; i++) 
                 {
                     GameObject eppEnEscena = epps.GetChild(i).gameObject;
@@ -124,6 +128,7 @@ public class TareaManager : MonoBehaviour
                     objeto.SetActive(false);
                     objectsManagerRojas.SpawnObject(objeto.transform);
                     audioManager.PlayByIndex(11);
+                    animatorObreroBueno.SetTrigger("MalaEleccion");
                     for (int i = 0; i < cantidadEppsEnEscena; i++)
                     {
                         GameObject eppEnEscena = epps.GetChild(i).gameObject;
