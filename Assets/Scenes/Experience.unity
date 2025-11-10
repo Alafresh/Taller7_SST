@@ -2915,8 +2915,8 @@ MonoBehaviour:
   - {fileID: 1450379141}
   - {fileID: 1796443121}
   phaseTeleport: {fileID: 222058732}
-  audioManager: {fileID: 0}
-  animatorObreroBueno: {fileID: 0}
+  audioManager: {fileID: 222058733}
+  animatorObreroBueno: {fileID: 4581014588973105220}
 --- !u!1001 &168990557
 PrefabInstance:
   m_ObjectHideFlags: 0
