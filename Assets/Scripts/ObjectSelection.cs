@@ -44,6 +44,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[8] = botasProtectoras;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else 
                 {                
@@ -59,6 +60,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[8] = tenis;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -74,6 +76,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[1] = tapones;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -89,6 +92,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[1] = audifonos;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -104,6 +108,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[7] = rodilleras;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -119,6 +124,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[2] = gafas;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -134,6 +140,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[9] = arnes;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -149,6 +156,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesCuero;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -164,6 +172,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesNitrilo;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -180,6 +189,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesAlgodon;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -195,6 +205,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesNeopreno;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -210,6 +221,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesPVC;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -225,6 +237,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[5] = guantesKevlar;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -240,6 +253,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[4] = camisa;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -255,6 +269,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[4] = camiseta;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -270,6 +285,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[6] = jean;
                     numeroDeObjetosSeleccionados++;
                     Debug.Log("el elemento en la posici�n 6 es de tipo " + objetosSeleccionados[6].tipo + " y es un " + objetosSeleccionados[6].objetoSeleccionado);
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -285,6 +301,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[6] = sudadera;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -300,6 +317,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[3] = casco;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -315,6 +333,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[0] = tapabocasCovid;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -330,6 +349,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[0] = tapabocasParticulas;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
@@ -345,6 +365,7 @@ public class ObjectSelection : MonoBehaviour
                     objetosSeleccionados[0] = tapabocasFiltros;
                     Debug.Log("Objeto agregado");
                     numeroDeObjetosSeleccionados++;
+                    Inventory.Instance.AddToInventory(objetoSeleccionado);
                 }
                 else
                 {
