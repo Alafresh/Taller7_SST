@@ -3,25 +3,26 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource complementarySource;
 
-    public AudioClip introduccíonEPP;
-    public AudioClip explicacion;
-
+    public AudioClip[] clips;
 
     void Start()
     {
-        audioSource.clip = introduccíonEPP;
-        audioSource.Play();
+        PlayByIndex(0);
     }
 
-    
-    void Update()
+
+    private void PlayAudio(AudioClip clip)
     {
-        
-    }
-    private void PlayAudio(AudioClip clip) 
-    {
+        if (audioSource == null || clip == null) return;
         audioSource.clip = clip;
         audioSource.Play();
+    }
+    public void PlayByIndex(int index)
+    {
+        if (clips == null) return;
+        if (index < 0 || index >= clips.Length) return;
+        PlayAudio(clips[index]);
     }
 }

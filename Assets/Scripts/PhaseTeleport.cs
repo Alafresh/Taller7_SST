@@ -51,6 +51,9 @@ public class PhaseTeleport : MonoBehaviour
     [SerializeField] private TareaManager tareaManager;
 
     public GameObject warningSignParticles;
+
+    public AudioManager audioManager;
+    public AudioSource audioSourceComplementary;
     void Start()
     {
         volume = tp_volumeParent.GetComponent<Volume>();
@@ -144,6 +147,7 @@ public class PhaseTeleport : MonoBehaviour
                     yield return null;
                 }
                 animatorBrick.SetTrigger("Fall");
+                audioManager.PlayByIndex(10);
                 yield return new WaitUntil(() => animatorBrick.GetCurrentAnimatorStateInfo(0).IsName("FallAccident1"));
 
                 yield return new WaitUntil(() =>
@@ -156,6 +160,7 @@ public class PhaseTeleport : MonoBehaviour
                 {
                     float hv_activeTime = 0f;
                     hurtVolume.SetActive(true);
+                    audioManager.PlayByIndex(3);
                     while (hv_activeTime < hv_effect_endTime)
                     {
                         hv_activeTime += Time.deltaTime;
@@ -163,6 +168,7 @@ public class PhaseTeleport : MonoBehaviour
                         hv_vignette.intensity.value = Mathf.Lerp(hv_effect_initialIntensity, 0f, t);
                         yield return null;
                     }
+                    audioManager.PlayByIndex(6);
                     hurtVolume.SetActive(false);
                     hv_vignette.intensity.value = hv_effect_initialIntensity;
                 }
@@ -170,6 +176,7 @@ public class PhaseTeleport : MonoBehaviour
                 {
                     float sv_activeTime = 0f;
                     savedVolume.SetActive(true);
+                    audioManager.PlayByIndex(2);
                     while (sv_activeTime < s_effect_endTime)
                     {
                         sv_activeTime += Time.deltaTime;
@@ -177,6 +184,7 @@ public class PhaseTeleport : MonoBehaviour
                         s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
                         yield return null;
                     }
+                    audioManager.PlayByIndex(6);
                     savedVolume.SetActive(false);
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
@@ -188,7 +196,7 @@ public class PhaseTeleport : MonoBehaviour
                 while (elapsedTime < delayBeforeAccident2)
                 {
                     elapsedTime += Time.deltaTime;
-                    if(elapsedTime == (delayBeforeAccident2 * 0.66f)) StartCoroutine(ActivateWarningSign()); //Pendiente del float por si se quiere cambiar el tiempo en que inicia
+                    if(elapsedTime == (delayBeforeAccident2 * 0.66f)) StartCoroutine(ActivateWarningSign()); audioManager.PlayByIndex(7); audioSourceComplementary.Play();//Pendiente del float por si se quiere cambiar el tiempo en que inicia
                     yield return null;
                 }
                 animatorAirCompressor.SetTrigger("Fall");
@@ -203,11 +211,13 @@ public class PhaseTeleport : MonoBehaviour
                 warningSignParticles.SetActive(false);
                 if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco)
                 {
+                    audioManager.PlayByIndex(5);
                     hurtVolume.SetActive(true);
                 }
                 else if (objectSelection.objetosSeleccionados[8].objetoSeleccionado == EppsEnEscena.Objeto.Botas_Protectoras)
                 {
                     float sv_activeTime = 0f;
+                    audioManager.PlayByIndex(4);
                     savedVolume.SetActive(true);
                     while (sv_activeTime < s_effect_endTime)
                     {

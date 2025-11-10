@@ -13,6 +13,8 @@ public class HandPosesDetector : MonoBehaviour
 
     public PhaseTeleport phaseTeleport;
 
+    public AudioManager audioManager;
+
     protected virtual void Awake()
     {
         Hmd = _hmd as IHmd;
@@ -28,6 +30,7 @@ public class HandPosesDetector : MonoBehaviour
 
     private void OnThumbsUp() 
     {
+        audioManager.PlayByIndex(1);
         phaseTeleport.ActivateVolume();
     }
 }

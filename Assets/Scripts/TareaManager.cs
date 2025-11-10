@@ -23,6 +23,8 @@ public class TareaManager : MonoBehaviour
     public Transform epps;
     private int cantidadEppsEnEscena;
 
+    public AudioManager audioManager;
+
     private void Awake()
     {
         objetosGenerales = new EppsEnEscena[]
@@ -121,6 +123,7 @@ public class TareaManager : MonoBehaviour
                 {
                     objeto.SetActive(false);
                     objectsManagerRojas.SpawnObject(objeto.transform);
+                    audioManager.PlayByIndex(11);
                     for (int i = 0; i < cantidadEppsEnEscena; i++)
                     {
                         GameObject eppEnEscena = epps.GetChild(i).gameObject;
