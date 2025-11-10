@@ -127,12 +127,21 @@ public class PhaseTeleport : MonoBehaviour
         else if(hasTeleportedOneTime && !lastAccidentOccur)
         {
             player.transform.position = waypoint2.transform.position;
-            obreroBueno.transform.position = waypoint2.transform.position + new Vector3(0f, 0f,1.5f);
+            obreroBueno.transform.position = waypoint2.transform.position + new Vector3(0f, 0f,-1.5f);
             obreroBueno.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
         else if (lastAccidentOccur)
         {
-            yield break;
+            float time = 0f;
+            float endTime = 20f;
+            if (playerDied) endTime = 20f;
+            else endTime = 16f;
+            while (time < endTime)
+            {
+                time += Time.deltaTime;
+                float t = time / endTime;
+            }
+            SceneManager.LoadScene("EndingScene");
         }
         DeactivateVolume();
     }
@@ -183,6 +192,7 @@ public class PhaseTeleport : MonoBehaviour
                         hv_vignette.intensity.value = Mathf.Lerp(hv_effect_initialIntensity, 0f, t);
                         yield return null;
                     }
+                    yield return new WaitWhile(() => audioManager.audioSource.isPlaying);
                     audioManager.PlayByIndex(6);
                     hurtVolume.SetActive(false);
                     hv_vignette.intensity.value = hv_effect_initialIntensity;
@@ -199,21 +209,24 @@ public class PhaseTeleport : MonoBehaviour
                         s_vignette.intensity.value = Mathf.Lerp(s_effect_initialIntensity, 0f, t);
                         yield return null;
                     }
+                    yield return new WaitWhile(() => audioManager.audioSource.isPlaying);
                     audioManager.PlayByIndex(6);
                     savedVolume.SetActive(false);
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
                 audioManager.PlayByIndex(6);
                 animatorObreroBueno.SetTrigger("Thumbs Up");
+                yield return new WaitWhile(() => audioManager.audioSource.isPlaying);
                 ActivateVolume();
                 yield break;
             }
             else if (firstAccidentOccur)
             {
+                audioManager.PlayByIndex(7); audioSourceComplementary.Play();
                 while (elapsedTime < delayBeforeAccident2)
                 {
                     elapsedTime += Time.deltaTime;
-                    if(elapsedTime == (delayBeforeAccident2 * 0.66f)) StartCoroutine(ActivateWarningSign()); audioManager.PlayByIndex(7); audioSourceComplementary.Play();//Pendiente del float por si se quiere cambiar el tiempo en que inicia
+                    if(elapsedTime == (delayBeforeAccident2 * 0.66f)) StartCoroutine(ActivateWarningSign()); //Pendiente del float por si se quiere cambiar el tiempo en que inicia
                     yield return null;
                 }
                 animatorAirCompressor.SetTrigger("Fall");
@@ -247,7 +260,7 @@ public class PhaseTeleport : MonoBehaviour
                     savedVolume.SetActive(false);
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
-                yield return StartCoroutine(EndExperience());
+                EndExperience();
                 break;
             }
         }
@@ -257,16 +270,14 @@ public class PhaseTeleport : MonoBehaviour
         warningSignParticles.SetActive(true);
         yield return null;
     }
-    private IEnumerator EndExperience() 
-    {
-        yield return StartCoroutine(FadeOut());
+    private void EndExperience() 
+    {  
         if (playerDied)
         {
             audioSourceComplementary.clip = ambulancia;
             audioSourceComplementary.Play();
         }
-        yield return new WaitWhile(() => audioSourceComplementary.isPlaying);
-        SceneManager.LoadScene("EndingScene");
-        yield break;
+        new WaitWhile(() => audioSourceComplementary.isPlaying);
+        StartCoroutine(FadeOut());
     }
 }
