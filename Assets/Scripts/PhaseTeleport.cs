@@ -188,9 +188,9 @@ public class PhaseTeleport : MonoBehaviour
                 while (elapsedTime < delayBeforeAccident2)
                 {
                     elapsedTime += Time.deltaTime;
+                    if(elapsedTime == (delayBeforeAccident2 * 0.66f)) StartCoroutine(ActivateWarningSign()); //Pendiente del float por si se quiere cambiar el tiempo en que inicia
                     yield return null;
                 }
-                warningSignParticles.SetActive(true); //Mover esto para darle tiempo de reaccin al usuario
                 animatorAirCompressor.SetTrigger("Fall");
                 yield return new WaitUntil(() => animatorAirCompressor.GetCurrentAnimatorStateInfo(0).IsName("Falling"));
 
@@ -200,6 +200,7 @@ public class PhaseTeleport : MonoBehaviour
                 );
 
                 animatorAirCompressor.transform.gameObject.SetActive(false);
+                warningSignParticles.SetActive(false);
                 if (objectSelection.objetosSeleccionados[3] == null || objectSelection.objetosSeleccionados[3].objetoSeleccionado != EppsEnEscena.Objeto.Casco)
                 {
                     hurtVolume.SetActive(true);
@@ -218,8 +219,22 @@ public class PhaseTeleport : MonoBehaviour
                     savedVolume.SetActive(false);
                     s_vignette.intensity.value = s_effect_initialIntensity;
                 }
+                yield return StartCoroutine(EndExperience());
                 break;
             }
         }
+    }
+    private IEnumerator ActivateWarningSign ()
+    {
+        warningSignParticles.SetActive(true);
+        yield return null;
+    }
+    private IEnumerator EndExperience() 
+    {
+
+
+        yield return new WaitForSeconds(5f); //Cambiar este tiempo dependiendo de lo que se demoren los audios finales
+
+        StopAllCoroutines();
     }
 }
